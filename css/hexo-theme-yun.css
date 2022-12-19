@@ -294,15 +294,15 @@ body::before {
   background-repeat: no-repeat;
   animation-name: bgFadeIn;
   animation-duration: 2s;
-  opacity: 0.2;
-  filter: blur(30px);
+  opacity: 1;
+  filter: blur(0px);
 }
 @-moz-keyframes bgFadeIn {
   from {
     opacity: 0;
   }
   to {
-    opacity: 0.2;
+    opacity: 1;
   }
 }
 @-webkit-keyframes bgFadeIn {
@@ -310,7 +310,7 @@ body::before {
     opacity: 0;
   }
   to {
-    opacity: 0.2;
+    opacity: 1;
   }
 }
 @-o-keyframes bgFadeIn {
@@ -318,7 +318,7 @@ body::before {
     opacity: 0;
   }
   to {
-    opacity: 0.2;
+    opacity: 1;
   }
 }
 @keyframes bgFadeIn {
@@ -326,7 +326,7 @@ body::before {
     opacity: 0;
   }
   to {
-    opacity: 0.2;
+    opacity: 1;
   }
 }
 :root {
