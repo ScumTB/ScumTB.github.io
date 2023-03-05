@@ -8,15 +8,15 @@ document.addEventListener("pjax:success", initScrollReveal);
 </script><script src="https://fastly.jsdelivr.net/npm/pjax@latest/pjax.min.js" defer></script><script src="/js/pjax.js" defer type="module"></script><script src="https://fastly.jsdelivr.net/npm/vue@2.6.14"></script><link rel="icon" type="image/svg+xml" href="/1.svg"><link rel="mask-icon" href="/1.svg" color="#0078E7"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preconnect" href="https://fastly.jsdelivr.net/npm/" crossorigin><script id="yun-config">
     window.Yun = {}
     window.CONFIG = {"hostname":"scumtb.cn","root":"/","title":"ScumTB的小站","version":"1.10.9","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}.","hits":"${hits} results found","hits_time":"${hits} results found in ${time} ms"},"anonymous_image":"https://cdn.yunyoujun.cn/img/avatar/none.jpg","say":{"api":"https://v1.hitokoto.cn/?c=a","hitokoto":true},"fireworks":{"colors":null},"vendors":{"host":"https://fastly.jsdelivr.net/npm/","darken":"https://fastly.jsdelivr.net/npm/darken@1.5.0"}};
-  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/hexo-theme-yun.js" type="module"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js" defer></script><script src="/js/load-aplayer.js" defer></script><meta name="description" content="git add git add .之后会在&#x2F;.git&#x2F;objicts&#x2F;目录生产一个哈希值,存储了类型，文件内容，文件名信息不在里面   git cat-file -t 哈希值  git cat-file -p 哈希值 git ls-files -s 查看文件的索引，修改文件内容哈希值会改变,并不会覆盖之前的哈希值，会重新生成  git commit git commi">
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/hexo-theme-yun.js" type="module"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js" defer></script><script src="/js/load-aplayer.js" defer></script><meta name="description" content="git add git add .之后会在&#x2F;.git&#x2F;objicts&#x2F;目录生产一个哈希值,存储了类型，文件内容，文件名信息不在里面   git cat-file -t 哈希值  git cat-file -p 哈希值 git ls-files -s 查看文件的索引，修改文件内容哈希值会改变,并不会覆盖之前的哈希值，会重新生成  git commit commit对象：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git基本原理">
 <meta property="og:url" content="https://scumtb.cn/2023/03/05/git%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/index.html">
 <meta property="og:site_name" content="ScumTB&#39;s Blog">
-<meta property="og:description" content="git add git add .之后会在&#x2F;.git&#x2F;objicts&#x2F;目录生产一个哈希值,存储了类型，文件内容，文件名信息不在里面   git cat-file -t 哈希值  git cat-file -p 哈希值 git ls-files -s 查看文件的索引，修改文件内容哈希值会改变,并不会覆盖之前的哈希值，会重新生成  git commit git commi">
+<meta property="og:description" content="git add git add .之后会在&#x2F;.git&#x2F;objicts&#x2F;目录生产一个哈希值,存储了类型，文件内容，文件名信息不在里面   git cat-file -t 哈希值  git cat-file -p 哈希值 git ls-files -s 查看文件的索引，修改文件内容哈希值会改变,并不会覆盖之前的哈希值，会重新生成  git commit commit对象：">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-03-05T08:54:30.000Z">
-<meta property="article:modified_time" content="2023-03-05T12:55:18.954Z">
+<meta property="article:modified_time" content="2023-03-05T13:11:52.403Z">
 <meta property="article:author" content="ScumTB">
 <meta name="twitter:card" content="summary"><script>(function() {
   if (CONFIG.mode !== 'auto') return
@@ -43,12 +43,12 @@ IconifyProviders = {
 <li>git cat-file -p 哈希值</li>
 <li>git ls-files -s 查看文件的索引，修改文件内容哈希值会改变,并不会覆盖之前的哈希值，会重新生成</li>
 </ul>
-<h2 id="git-commit"><a href="#git-commit" class="headerlink" title="git commit"></a>git commit</h2><ul>
-<li>git commit也会在.&#x2F;git&#x2F;object目录下生成哈希值</li>
-<li>commit会在.&#x2F;git&#x2F;object生成两个对象，一个是tree 一个是commit<blockquote>
+<h2 id="git-commit"><a href="#git-commit" class="headerlink" title="git commit"></a>git commit</h2><blockquote>
 <p>commit对象：指向哪一个tree以及作者的信息——–tree对象：包含了哪些文件</p>
 </blockquote>
-</li>
+<ul>
+<li>git commit也会在.&#x2F;git&#x2F;object目录下生成哈希值</li>
+<li>commit会在.&#x2F;git&#x2F;object生成两个对象，一个是tree 一个是commit</li>
 <li>git log可以查看commit历史</li>
 </ul>
 <h2 id="git-branch"><a href="#git-branch" class="headerlink" title="git branch"></a>git branch</h2><ul>
