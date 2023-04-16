@@ -60,7 +60,7 @@ IconifyProviders = {
 <p>将镜像源添加在第一行（中科大不错）</p>
 <p><code>Server = https://mirrors.bfsu.edu.cn/archlinux/$repo/os/$arch</code></p>
 <p><code>Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch</code></p>
-<h2 id="安装基本包："><a href="#安装基本包：" class="headerlink" title="安装基本包："></a>安装基本包：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacstrap /mnt base base-devel linux linux-firmware dhcpcd</span><br></pre></td></tr></table></figure>
+<h2 id="安装基本包："><a href="#安装基本包：" class="headerlink" title="安装基本包："></a>安装基本包：</h2><pre class="language-none"><code class="language-none">pacstrap &#x2F;mnt base base-devel linux linux-firmware dhcpcd</code></pre>
 <h2 id="genfstab"><a href="#genfstab" class="headerlink" title="genfstab"></a>genfstab</h2><ul>
 <li><code>genfstab -L /mnt &gt;&gt; /mnt/etc/fstab</code></li>
 <li><code>cat /mnt/etc/fstab</code>查看一下<blockquote>
