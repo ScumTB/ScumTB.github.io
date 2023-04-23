@@ -111,5 +111,4 @@ theme: yun
 deploy:
   type: 'git'
   repository: git@github.com:ScumTB/ScumTB.github.io.git
-  branch: main
-  
+  branch: main  
