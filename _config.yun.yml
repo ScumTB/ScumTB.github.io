@@ -1,0 +1,159 @@
+social:
+    # set rss in your root config
+    # https://github.com/hexojs/hexo-generator-feed
+  - name: Home 
+    link: https://www.scumtb.cn
+    icon: ri:home-7-line
+    color: '#1296db'
+  - name: Bilibili 
+    link: https://space.bilibili.com/639433048
+    icon: ri:bilibili-line
+    color: '#FF8EB3'  
+  - name: Music
+    link: https://music.163.com/#/user/home?id=7800557453
+    icon: ri:netease-cloud-music-line
+    color: '#C10D0C'
+  - name: Steam
+    link: https://steamcommunity.com/id/ScumTB
+    icon: ri:steam-fill
+    color: '#004986' 
+  - name: Twitter
+    link: https://twitter.com/Scum33299664
+    icon: ri:twitter-line
+    color: '#1da1f2'
+
+
+reward:
+  enable: false
+
+
+albums:
+  enable: true
+
+encrypt:
+  enable:true
+      
+head:
+  css:
+    aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css
+  js:
+    defer:
+      aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js
+      loadAplayer: /js/load-aplayer.js
+
+say:
+  enable: true
+  # https://developer.hitokoto.cn/sentence/
+  api: /data/sentences.json 
+  hitokoto:
+    enable: true
+    api: https://v1.hitokoto.cn/?c=a 
+say-content:
+  color: white
+
+
+
+favicon: /1.svg
+
+
+sidebar:
+  src: /js/sidebar.js
+  bg_image: https://cdn.staticaly.com/gh/ScumTB/blogpictures@master/test/000.png 
+  bg_position: bottom 3rem center
+  tagcloud:
+    enable: false
+    amount: 20
+
+mourn:
+  enable: true
+  days:
+    - 4-4
+    - 5-2
+    - 11-30
+    - 12-13
+
+
+# 关闭 highlight
+highlight:
+  enable: false
+# 启用 prism
+prismjs:
+  enable: true
+  preprocess: true
+  line_number: false
+  tab_replace: ''
+
+
+
+
+girls:
+  enable: true
+
+
+pjax:
+  enable: true
+
+
+
+banner:
+  enable: true
+  title: ScumTB的小站
+  border: true
+  cloud:
+    enable: true
+    color: white
+  go_down:
+    enable: true
+    icon: ri:arrow-down-s-line
+avatar:
+  enable: true
+  url: /images/th.jpeg
+  rounded: true
+  opacity: 1
+  mickey_mouse: true
+  status:
+    enable: true
+    emoji: 😭
+    message: 你鸡巴谁啊 
+
+footer:
+  live_time:
+    enable: true
+    prefix: 本博客已萌萌哒地运行
+    suffix: (●'◡'●)
+    start_time: '2022-10-29T00:00:00'
+menu:
+  home:
+    path: /
+    icon: ri:home-4-line
+  list:
+    - type: archives
+      path: /archives/
+      icon: ri:archive-line
+    - type: record
+      path: /diary/
+      icon: ri:edit-2-line
+    - type: pictures
+      path: /tags/
+      icon: ri:book-2-line
+   # - path: https://www.yunyoujun.cn
+    #   icon: ri:cloud-line
+    #   count: 你猜
+  custom:
+    title: About
+    path: https://blog.scumtb.cn/about/
+    icon: ri:settings-line
+
+pages:
+  - name: girls 
+    url: /girls/
+    icon: ri:women-line
+    color: hotpink
+  - name: pixv
+    url: /pixiv/
+    icon: ri:parking-line
+    color: '#0074AA'
+  - name: albums
+    url: /albums/
+    icon: ri:camera-line 
+    color: '#d4237a' 
