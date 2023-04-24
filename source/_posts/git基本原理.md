@@ -32,12 +32,6 @@ tags:
 * git branch -M main(master变为main好像有说法)
 * git push -u origin main
 
-> git remote
-
-* git remote add origin HTTPS/SSH
-* git branch -M branchname
-* git push -u origin branchname
-
 > git push
 
 * git push -u origin branchname
