@@ -26,6 +26,12 @@ tags:
 * 删除分支git branch -d name 
 * 查看远程仓库分支git branch -a
 
+> git推送已经存在的项目
+
+* git remote add origin git@github.com:name/name.git
+* git branch -M main(master变为main好像有说法)
+* git push -u origin main
+
 > git remote
 
 * git remote add origin HTTPS/SSH
