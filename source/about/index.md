@@ -7,7 +7,7 @@ date: 2022-11-30 16:53:07
 > 关于我
 
 1. 常用ID：ScumTB 
-2. 动漫都是一坨狗屎,但纸片人真好看
+2. 动漫里面纸片人真好看
 3. 喜欢的游戏：Hollow Knight
 4. Archlinux user
 
@@ -19,7 +19,7 @@ date: 2022-11-30 16:53:07
 * scumtb.cn域名
 * scumtb.top域名
 * 荣耀9X手机
-* iPhone12
+* iPhone12 128G
 * SAMSUNG 64G ubuntu系统
 * Lenovi xiaoxin-15ARE 2020(Archlinux)
 
