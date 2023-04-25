@@ -120,7 +120,7 @@ footer:
     enable: true
     prefix: 本博客已萌萌哒地运行
     suffix: (●'◡'●)
-    start_time: '2022-10-29T00:00:00'
+    start_time: '2021-10-29T00:00:00'
 menu:
   home:
     path: /
