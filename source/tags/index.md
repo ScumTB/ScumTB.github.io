@@ -3,6 +3,7 @@ title: WIKI
 date: 2022-11-30 17:58:47
 ---
 # ScumWiki----我的百科全书
+* windows安装scoop`iwr -useb get.scoop.sh | iex`
 * Qv2ray设置全局代理：Preferences->ConnectionSetting ->BypassCNMainland
 * vim编辑html实时显示插件 Bracey.vim 牛
 * linux鼠标灵敏度：`xinput list` `xinput list-props "Logitech G502 HERO Gaming Mouse"` `xinput set-prop "Logitech G502 HERO Gaming Mouse" "libinput Accel Speed" 0`
