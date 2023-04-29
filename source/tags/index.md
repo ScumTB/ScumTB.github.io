@@ -3,6 +3,7 @@ title: WIKI
 date: 2022-11-30 17:58:47
 ---
 # ScumWiki----我的百科全书
+* linuxqq掉线解决方法：rm -rf ~/.config/QQ
 * windows安装scoop`iwr -useb get.scoop.sh | iex`
 * Qv2ray设置全局代理：Preferences->ConnectionSetting ->BypassCNMainland
 * vim编辑html实时显示插件 Bracey.vim 牛
