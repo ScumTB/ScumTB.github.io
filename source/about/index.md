@@ -21,10 +21,10 @@ date: 2022-11-30 16:53:07
 * 荣耀9X手机
 * iPhone12 128G
 * SAMSUNG 64G ubuntu系统
-* Lenovi xiaoxin-15ARE 2020(Archlinux)
+* Lenovi xiaoxin-15ARE 2020(Archlinux+DWM+KDE)
 
 
-> Contact
+> 联系
 
 * Email:`me@scumtb.cn`或者`soumt3@gmail.com`
 * Github:[ScumTB](https://github.com/ScumTB)
@@ -34,7 +34,7 @@ date: 2022-11-30 16:53:07
 * Steam:[ScumTB](https://steamcommunity.com/id/ScumTB)
 
 ***
-> Anime quotes 
+> 动漫语录 
 
 * 即使我变弱了，也不代表你们变强了
 * 眼前的场景，我不会让给任何人
@@ -51,18 +51,12 @@ date: 2022-11-30 16:53:07
 * 真正的战士是不用剑的 
 * 因为我是不会停下来的！只要你们不停下脚步，前面就一定有我！所以说……不要停下来啊……
 
+> 感谢 
 
-*** 
+* Github[https://github.com/]页面托管
+* hexo[https://hexo.io/zh-cn/]静态博客
+* Yun[https://yun.yunyoujun.cn/guide/]主题
 
-> Cabin  
-* 空洞骑士游戏hao wan
-* 看V给他充钱，名字叫 香草帕帕子（真的可以对V）
-* 开始玩Cuphead，欧卡2,冰与火之舞
-* 紫罗兰永恒花园真难看
-* 无锡学院快发钱,有的老师真尼玛贱z
-* 死马玩意，怎么有那么多难看的电影
-
-***
 
 
 
