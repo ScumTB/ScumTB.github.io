@@ -143,6 +143,7 @@ sudo aircrack-ng ScumTB-01.cap -w ~/Documents/rockyou.txt
 #### 注意
 * 暴力破解，如果字典没有匹配的密码是不能成功的
 * 确保你是断网(网卡为monitor) 
+* 目标用户在使用该网络，并在攻击后会尝试连接，否则不能抓取到数据包
 #### 参考
 > https://github.com/brannondorsey/wifi-cracking
 
