@@ -1,5 +1,5 @@
 ---
-title: linux笔记
+title: 重学linux笔记
 date: 2023-02-27 19:35:55
 tags:
 ---
