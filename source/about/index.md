@@ -56,6 +56,7 @@ date: 2022-11-30 16:53:07
 * [Github](https://github.com/)页面托管
 * [hexo](https://hexo.io/zh-cn/)静态博客
 * [Yun](https://yun.yunyoujun.cn/guide/)主题
+* cloudflare域名解析
 
 
 
