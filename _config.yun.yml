@@ -65,10 +65,9 @@ sidebar:
     amount: 20
 
 mourn:
-  enable: false
+  enable: true
   days:
     - 4-4
-    - 5-2
     - 12-13
 
 

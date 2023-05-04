@@ -64,8 +64,5 @@ tags:
 
 ## 4.测试
 
-完了，失败了，我去改改   2023-1-13
-
-好了解决了
 
 ![](https://cdn.staticaly.com/gh/ScumTB/blogpictures@master/test/2023-01-13_14-34.png)
