@@ -26,6 +26,11 @@ tags:
 * 删除分支git branch -d name 
 * 查看远程仓库分支git branch -a
 
+> git reset
+
+* git reset HEAD~1:是撤回刚刚commit
+* git reset --hard HEAD~1:工作目录修改全部退回
+
 > git推送已经存在的项目
 
 * git remote add origin git@github.com:name/name.git
