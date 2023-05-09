@@ -33,6 +33,13 @@ date: 2022-11-30 16:53:07
 * Music:[ScumTB](https://music.163.com/#/user/home?id=7800557453)
 * Steam:[ScumTB](https://steamcommunity.com/id/ScumTB)
 
+> 感谢 
+
+* [Github](https://github.com/)页面托管
+* [hexo](https://hexo.io/zh-cn/)静态博客
+* [Yun](https://yun.yunyoujun.cn/guide/)主题
+* [cloudflare](https://www.cloudflare.com/)域名解析
+
 ***
 > 动漫语录 
 
@@ -50,13 +57,6 @@ date: 2022-11-30 16:53:07
 * 你要记住，你没有任何敌人
 * 真正的战士是不用剑的 
 * 因为我是不会停下来的！只要你们不停下脚步，前面就一定有我！所以说……不要停下来啊……
-
-> 感谢 
-
-* [Github](https://github.com/)页面托管
-* [hexo](https://hexo.io/zh-cn/)静态博客
-* [Yun](https://yun.yunyoujun.cn/guide/)主题
-* [cloudflare](https://www.cloudflare.com/)域名解析
 
 
 
