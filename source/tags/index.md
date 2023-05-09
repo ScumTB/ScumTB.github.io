@@ -3,6 +3,7 @@ title: WIKI
 date: 2022-11-30 17:58:47
 ---
 # ScumWiki----我的百科全书
+* 我的设备静音和取消静音：`/usr/bin/amixer -D pulse set Master toggle`
 * linux终端禁用麦克风：amixer set Capture nocap启用麦克风：amixer set Capture cap
 * linuxqq掉线解决方法：rm -rf ~/.config/QQ
 * windows安装scoop`iwr -useb get.scoop.sh | iex`
