@@ -9,7 +9,7 @@ date: 2022-11-30 17:58:47
 * windows安装scoop`iwr -useb get.scoop.sh | iex`
 * Qv2ray设置全局代理：Preferences->ConnectionSetting ->BypassCNMainland
 * vim编辑html实时显示插件 Bracey.vim 牛
-* linux鼠标灵敏度：`xinput list` `xinput list-props "Logitech G502 HERO Gaming Mouse"` `xinput set-prop "Logitech G502 HERO Gaming Mouse" "libinput Accel Speed" 0`
+* linux鼠标灵敏度：`xinput list` `xinput list-props "Logitech G502 HERO Gaming Mouse"` `xinput set-prop "Logitech G502 HERO Gaming Mouse" "libinput Accel Speed" -0.8`
 * ios传文件到电脑上snapdrop.net(跨设备好像不行了)---pairdrop.net
 * 云服务器centos8LNMP搭建:https://cloud.tencent.com/document/product/213/49304
 * wo这里电费是5毛一度，水好像3元一吨
