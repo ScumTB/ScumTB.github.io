@@ -7,7 +7,7 @@ date: 2022-11-30 16:53:07
 > 关于我
 
 1. 常用ID：ScumTB 
-2. 动漫里面纸片人真好看
+2. 动漫-心理测量者-最喜欢-
 3. 喜欢的游戏：Hollow Knight
 4. Archlinux user
 
