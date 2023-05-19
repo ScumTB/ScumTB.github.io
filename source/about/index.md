@@ -10,6 +10,7 @@ date: 2022-11-30 16:53:07
 2. 动漫:心理测量者
 3. 喜欢的游戏：Hollow Knight
 4. Archlinux user
+5. OpenPGP:A0DC 021F D94D A406 EEE3 9028 985F 69B5 B693 F8AB
 
 >  拥有的设备：
 
