@@ -7,18 +7,17 @@ date: 2022-11-30 16:53:07
 > 关于我
 
 1. 常用ID：ScumTB 
-2. 动漫:心理测量者
+2. 喜欢的动漫:心理测量者-S1
 3. 喜欢的游戏：Hollow Knight
 4. Archlinux user
-5. OpenPGP:A0DC 021F D94D A406 EEE3 9028 985F 69B5 B693 F8AB
+5. #OpenPGP:A0DC 021F D94D A406 EEE3 9028 985F 69B5 B693 F8AB
 
 >  拥有的设备：
 
 * ucloud泰国主机
 * Racknerd梯子（暂时没崩）
 * 搬瓦工（未来会有）
-* scumtb.cn域名
-* scumtb.top域名
+* scumtb.cn和scumtb.top域名
 * 荣耀9X手机
 * iPhone12 128G
 * SAMSUNG 64G ubuntu系统
