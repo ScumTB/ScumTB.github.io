@@ -15,7 +15,7 @@ date: 2022-11-30 16:53:07
 >  拥有的设备：
 
 * ucloud泰国主机
-* Racknerd梯子（暂时没崩）
+* Racknerd梯子（已崩）
 * 搬瓦工（未来会有）
 * scumtb.cn和scumtb.top域名
 * 荣耀9X手机
