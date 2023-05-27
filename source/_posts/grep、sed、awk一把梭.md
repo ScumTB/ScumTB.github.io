@@ -12,7 +12,7 @@ tags:
 * 显示为匹配的行（打印在终端）：加入-v 参数
 ### sed
 
-> `sed`是一款常用的文本编辑器，其名称为“stream editor”，即流编辑器。
+* `sed`是一款常用的文本编辑器，其名称为“stream editor”，即流编辑器。
 
 1. 替换命令：`s`
 
@@ -44,10 +44,12 @@ sed -n '/goat/p' tmp.file
 
 ### awk
 
-> 举个例子
 
-1. 一个例子：<a alt="21 血的褒奖" href="http://www.qinxiaoshuo.com/read/0/1716/5d77d35456fec85e5b10145e.html">21 血的褒奖</a>
-2. 如何处理这个数据得到http://www.qinxiaoshuo.com/read/0/1716/5d77d35456fec85e5b10145e.html
+1. 一个例子
+```
+<a alt="21 血的褒奖" href="http://www.qinxiaoshuo.com/read/0/1716/5d77d35456fec85e5b10145e.html">21 血的褒奖</a>
+```
+2. 如何处理这个数据得到`http://www.qinxiaoshuo.com/read/0/1716/5d77d35456fec85e5b10145e.html`
 3. 假设上面的内容在pass.html文件里
 3. `grep alt pass.html | awk -F "href=\"" '{print $2}'| awk -F "\"" '{print $1}'`
 4. 第一个awk命令使用字符串"href=""作为分隔符，输出第二个字段
