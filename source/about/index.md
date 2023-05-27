@@ -7,7 +7,7 @@ date: 2022-11-30 16:53:07
 > 关于我
 
 1. 常用ID：ScumTB 
-2. 喜欢的动漫:心理测量者-S1
+2. 喜欢的动漫:Psycho-Pass
 3. 喜欢的游戏：Hollow Knight
 4. Archlinux user
 
