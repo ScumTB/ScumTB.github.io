@@ -5,10 +5,10 @@ social:
     link: https://www.scumtb.cn
     icon: ri:home-7-line
     color: '#1296db'
-  - name: Bilibili 
-    link: https://space.bilibili.com/639433048
-    icon: ri:bilibili-line
-    color: '#FF8EB3'  
+  - name: GitHub
+    link: https://github.com/ScumTB
+    icon: ri:github-line
+    color: '#181717'
   - name: Music
     link: https://music.163.com/#/user/home?id=7800557453
     icon: ri:netease-cloud-music-line
