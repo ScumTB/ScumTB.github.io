@@ -8,19 +8,19 @@ date: 2022-11-30 16:53:07
 
 1. 常用ID：ScumTB 
 2. 喜欢的动漫:Psycho-Pass
-3. 喜欢的游戏：Hollow Knight
+3. 喜欢的游戏：Hollow Knight、Dark Souls III
 4. Archlinux user
 
 >  拥有的设备：
 
+* Lenovi xiaoxin-15ARE 2020(Archlinux+DWM+KDE)
 * ucloud泰国主机
-* Racknerd梯子（已崩）
+* Racknerd美国梯子（已崩）
 * 搬瓦工（未来会有）
 * scumtb.cn和scumtb.top域名
 * 荣耀9X手机
 * iPhone12 128G
 * SAMSUNG 64G ubuntu系统
-* Lenovi xiaoxin-15ARE 2020(Archlinux+DWM+KDE)
 
 
 > 联系
