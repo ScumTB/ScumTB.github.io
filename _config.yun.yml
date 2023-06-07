@@ -128,7 +128,7 @@ menu:
     - type: archives
       path: /archives/
       icon: ri:archive-line
-    - type: record
+    - type: Travel log
       path: /diary/
       icon: ri:edit-2-line
     - type: pictures
