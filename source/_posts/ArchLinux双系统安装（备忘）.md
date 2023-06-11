@@ -1,5 +1,5 @@
 ---
-title: ArchLinux双系统安装（备忘）
+title: Hello,ArchLinux!
 date: 2023-01-03 11:45:14
 tags:
 ---
