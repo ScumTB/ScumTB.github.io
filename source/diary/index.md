@@ -4,6 +4,7 @@ date: 2022-11-30 17:59:55
 ---
 > To see the world, things dangerous to come to, to see behind walls, to draw closer, to find each other and to feel. That is the purpose of life
 
+* 2023.6.21 ：）->端午
 * 2023.6.15 去tmd数学物理方程
 * 2023.5.31 :(
 * 2023.5.15 复阳,失去味觉嗅觉
