@@ -4,6 +4,7 @@ date: 2022-11-30 17:59:55
 ---
 > To see the world, things dangerous to come to, to see behind walls, to draw closer, to find each other and to feel. That is the purpose of life
 
+* 2023.6.26 暑假零钱还剩568元，一天20以内
 * 2023.6.21 ：）->端午
 * 2023.6.15 去tmd数学物理方程
 * 2023.5.31 :(
