@@ -4,6 +4,7 @@ date: 2022-11-30 17:59:55
 ---
 > To see the world, things dangerous to come to, to see behind walls, to draw closer, to find each other and to feel. That is the purpose of life
 
+* 2023.7.1  凌晨4点起来搭蚊帐
 * 2023.6.30 还剩两百，烤排骨真好吃
 * 2023.6.29 该省省，该花花，花个100点个烤排骨
 * 2023.6.29 还剩272,暑假两个月
