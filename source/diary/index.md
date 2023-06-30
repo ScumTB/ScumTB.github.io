@@ -4,11 +4,9 @@ date: 2022-11-30 17:59:55
 ---
 > To see the world, things dangerous to come to, to see behind walls, to draw closer, to find each other and to feel. That is the purpose of life
 
-<<<<<<< HEAD
+* 2023.6.30 还剩两百，烤排骨真好吃
 * 2023.6.29 该省省，该花花，花个100点个烤排骨
-=======
 * 2023.6.29 还剩272,暑假两个月
->>>>>>> d243170d6410ec6334278b2080d4297069a637ed
 * 2023.6.28 起的晚，tmd食堂12点就没饭了
 * 2023.6.26 暑假零钱还剩568元，一天20以内
 * 2023.6.21 ：）->端午
