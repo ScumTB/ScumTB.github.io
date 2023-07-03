@@ -32,6 +32,7 @@ bash <(curl -s -L https://git.io/v2ray.sh)
 * Spawn failed问题大多是因为git进行push或者hexo d的时候改变了一些.deploy_git文件下的内容。
 * v2raya开启全局模式，IP Forward:Do not Split Traffic
 * archlinux安装vmware需要的依赖`sudo pacman -S fuse2 gtkmm linux-headers pcsclite libcanberra`    ` yay -S ncurses5-compat-libs`
+* archlinux中vmware加载模块sudo modprobe -a vmw_vmci vmmon为了正常运行虚拟机
 * archlinux vmware could not connect ethernet0 问题:` sudo modprobe vmnet && sudo vmware-networks --start`     
 `sudo systemctl start vmware-networks.service`
 * (tmux new -s work)(tmux ls)(tmux attach -t work)(分离session:Ctrl+b d)(新建窗口：Ctrl+b c)(窗口里面分割：Ctrl+b %)(关闭窗格：Ctrl+b x)
