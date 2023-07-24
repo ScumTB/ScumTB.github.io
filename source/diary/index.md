@@ -4,6 +4,7 @@ date: 2022-11-30 17:59:55
 ---
 > To see the world, things dangerous to come to, to see behind walls, to draw closer, to find each other and to feel. That is the purpose of life
 
+* 2023.7.24 13000经过暑假一个月，一万不到了，点尼玛的外卖
 * 2023.7.21 切记，熬夜伤身体
 * 2023.7.7  吃个早饭回来睡觉，再玩最后一天!!!
 * 2023.7.6  愿百合安息一切二次元的灵魂:><
