@@ -4,6 +4,7 @@ date: 2022-11-30 17:59:55
 ---
 > To see the world, things dangerous to come to, to see behind walls, to draw closer, to find each other and to feel. That is the purpose of life
 
+* 2023.8.1  这学校的空调一点没有夏天的味道，又贵又没冷空气
 * 2023.7.30 我明明记得关空调的啊啊啊
 * 2023.7.25 暑假第一个月，摆的很开心
 * 2023.7.21 切记，熬夜伤身体
