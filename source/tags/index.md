@@ -28,7 +28,6 @@ bash <(curl -s -L https://git.io/v2ray.sh)
 * steam下载路径：/home/scum/.local/share/Steam/steamapps/common
 * ffmpeg简单裁剪视频：ffmpeg -ss 00:00:00 -t 00:00:30 -i keyoutput.mp4 -vcodec copy -acodec copy split.mp4
 * 128.1.44.125
-* 国外的服务器1G带宽运行wordpress很卡
 * Spawn failed问题大多是因为git进行push或者hexo d的时候改变了一些.deploy_git文件下的内容。
 * v2raya开启全局模式，IP Forward:Do not Split Traffic
 * archlinux安装vmware需要的依赖`sudo pacman -S fuse2 gtkmm linux-headers pcsclite libcanberra`    ` yay -S ncurses5-compat-libs`
