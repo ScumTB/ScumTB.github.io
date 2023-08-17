@@ -4,6 +4,7 @@ date: 2022-11-30 17:59:55
 ---
 > To see the world, things dangerous to come to, to see behind walls, to draw closer, to find each other and to feel. That is the purpose of life
 
+* 2023.8.17 买了瓦罗兰特通行证瞬间后悔 
 * 2023.8.2  今日午饭：叫花鸡半只，两个五花肉卷
 * 2023.8.1  吃个饭团腮帮子吃累了,本来还打算点个汉堡的
 * 2023.8.1  好多天睡到5点就睡不着力
