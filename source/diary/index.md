@@ -4,6 +4,7 @@ date: 2022-11-30 17:59:55
 ---
 > To see the world, things dangerous to come to, to see behind walls, to draw closer, to find each other and to feel. That is the purpose of life
 
+* 2024.2.13 没死
 * 2024.2.12 米米米米米米
 * 2024.2.9  除夕快乐
 * 2023.8.17 买了瓦罗兰特通行证瞬间后悔 
