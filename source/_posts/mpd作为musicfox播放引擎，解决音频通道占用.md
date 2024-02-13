@@ -3,7 +3,7 @@ title: mpd作为musicfox播放引擎，解决音频通道占用
 date: 2024-02-13 16:36:32
 tags:
 ---
-## ~~
+## :(
 * musicfox终端播放音乐时网页浏览器视频一直缓冲，应该是音频通道占用 
 ## 安装
 * sudo pacman -S mpd go-musicfox pulseaudio
