@@ -4,6 +4,7 @@ date: 2022-11-30 17:59:55
 ---
 > To see the world, things dangerous to come to, to see behind walls, to draw closer, to find each other and to feel. That is the purpose of life
 
+* 2024.2.19 musicfox
 * 2024.2.15 涟水煎饼加火腿片加辣条要7.5元
 * 2024.2.15 出生
 * 2024.2.13 没死
