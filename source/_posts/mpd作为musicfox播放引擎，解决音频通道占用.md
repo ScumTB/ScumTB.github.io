@@ -60,4 +60,5 @@ audio_output {
 * https://github.com/go-musicfox/go-musicfox
 * https://wiki.archlinuxcn.org/wiki/Music_Player_Daemon
 * https://mpd.readthedocs.io/en/latest/user.html
+* pavucontrol可以在dwm中可视化控制mpd音量
 
