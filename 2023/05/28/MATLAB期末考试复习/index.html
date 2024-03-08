@@ -1,0 +1,957 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="ScumTB"><meta name="copyright" content="ScumTB"><meta name="generator" content="Hexo 6.3.0"><meta name="theme" content="hexo-theme-yun"><title>MATLAB期末考试-使用chatgpt复习 | ScumTB's Site</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/star-markdown-css@0.4.1/dist/yun/yun-markdown.min.css"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/prism-theme-vars/base.css"><script src="https://fastly.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>function initScrollReveal() {
+  [".post-card",".markdown-body img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+}
+document.addEventListener("DOMContentLoaded", initScrollReveal);
+document.addEventListener("pjax:success", initScrollReveal);
+</script><script src="https://fastly.jsdelivr.net/npm/pjax@latest/pjax.min.js" defer></script><script src="/js/pjax.js" defer type="module"></script><script src="https://fastly.jsdelivr.net/npm/vue@2.6.14"></script><link rel="icon" type="image/svg+xml" href="/1.svg"><link rel="mask-icon" href="/1.svg" color="#0078E7"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preconnect" href="https://fastly.jsdelivr.net/npm/" crossorigin><script id="yun-config">
+    window.Yun = {}
+    window.CONFIG = {"hostname":"scumtb.cn","root":"/","title":"ScumTB的小站","version":"1.10.11","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}.","hits":"${hits} results found","hits_time":"${hits} results found in ${time} ms"},"anonymous_image":"https://cdn.yunyoujun.cn/img/avatar/none.jpg","say":{"api":"https://v1.hitokoto.cn/?c=a","hitokoto":true},"fireworks":{"colors":null},"vendors":{"host":"https://fastly.jsdelivr.net/npm/","darken":"https://fastly.jsdelivr.net/npm/darken@1.5.0"}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/hexo-theme-yun.js" type="module"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js" defer></script><script src="/js/load-aplayer.js" defer></script><meta name="description" content="以下内容是由chatgpt生成，注意辨别 MATLAB 的基本操作命令：窗口命令、工作空间管理命令、显示格式设置命令、文件操作命令和帮助命令。MATLAB 的基本操作命令主要包括以下五个方面：  窗口命令：用于控制 MATLAB 的窗口和视图   clc：清空命令窗口 close all：关闭所有图形窗口 figure：创建新图形窗口 hold on、hold off：控制是否在同一图形窗口中添加">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MATLAB期末考试-使用chatgpt复习">
+<meta property="og:url" content="https://scumtb.cn/2023/05/28/MATLAB%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E5%A4%8D%E4%B9%A0/index.html">
+<meta property="og:site_name" content="ScumTB&#39;s Site">
+<meta property="og:description" content="以下内容是由chatgpt生成，注意辨别 MATLAB 的基本操作命令：窗口命令、工作空间管理命令、显示格式设置命令、文件操作命令和帮助命令。MATLAB 的基本操作命令主要包括以下五个方面：  窗口命令：用于控制 MATLAB 的窗口和视图   clc：清空命令窗口 close all：关闭所有图形窗口 figure：创建新图形窗口 hold on、hold off：控制是否在同一图形窗口中添加">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-05-27T20:12:38.000Z">
+<meta property="article:modified_time" content="2023-05-28T15:55:26.699Z">
+<meta property="article:author" content="ScumTB">
+<meta name="twitter:card" content="summary"><script>(function() {
+  if (CONFIG.mode !== 'auto') return
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  const setting = localStorage.getItem('darken-mode') || 'auto'
+  if (setting === 'dark' || (prefersDark && setting !== 'light'))
+    document.documentElement.classList.toggle('dark', true)
+})()</script></head><body><script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script><script>// Define global variable
+IconifyProviders = {
+  // Empty prefix: overwrite default API provider configuration
+  '': {
+    // Use custom API first, use Iconify public API as backup
+    resources: [
+        'https://api.iconify.design',
+    ],
+    // Wait for 1 second before switching API hosts
+    rotate: 1000,
+  },
+};</script><script defer src="https://fastly.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js" type="module"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="Table of Contents"><span class="icon iconify" data-icon="ri:list-ordered"></span></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="Overview"><span class="icon iconify" data-icon="ri:passport-line"></span></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info mickey-mouse"><a class="site-author-avatar" href="/about/" title="ScumTB"><img width="96" loading="lazy" src="/images/th.jpeg" alt="ScumTB"><span class="site-author-status" title="你鸡巴谁啊">😭</span></a><div class="site-author-name"><a href="/about/">ScumTB</a></div><span class="site-name">ScumTB's Site</span><sub class="site-subtitle">ScumTB</sub><div class="site-description">吃饭睡觉打豆豆</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="Home"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:home-4-line"></span></span></a><div class="site-state-item"><a href="/archives/" title="Archives"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:archive-line"></span></span><span class="site-state-item-count">26</span></a></div><div class="site-state-item"><a href="/diary/"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:edit-2-line"></span></span></a></div><div class="site-state-item"><a href="/tags/"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:book-2-line"></span></span></a></div><a class="site-state-item hty-icon-button" target="_blank" rel="noopener" href="https://blog.scumtb.cn/about/" title="About"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:settings-line"></span></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://www.scumtb.cn" title="Home" target="_blank" style="color:#1296db"><span class="icon iconify" data-icon="ri:home-7-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/ScumTB" title="GitHub" target="_blank" style="color:#181717"><span class="icon iconify" data-icon="ri:github-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://music.163.com/#/user/home?id=7800557453" title="Music" target="_blank" style="color:#C10D0C"><span class="icon iconify" data-icon="ri:netease-cloud-music-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://steamcommunity.com/id/ScumTB" title="Steam" target="_blank" style="color:#004986"><span class="icon iconify" data-icon="ri:steam-fill"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://twitter.com/Scum33299664" title="Twitter" target="_blank" style="color:#1da1f2"><span class="icon iconify" data-icon="ri:twitter-line"></span></a></div><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/girls/" title="girls" style="color:hotpink"><span class="icon iconify" data-icon="ri:women-line"></span></a><a class="links-item hty-icon-button" href="/pixiv/" title="pixv" style="color:#0074AA"><span class="icon iconify" data-icon="ri:parking-line"></span></a><a class="links-item hty-icon-button" href="/albums/" title="albums" style="color:#d4237a"><span class="icon iconify" data-icon="ri:camera-line"></span></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><span class="icon iconify" data-icon="ri:contrast-2-line"></span></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A5%E4%B8%8B%E5%86%85%E5%AE%B9%E6%98%AF%E7%94%B1chatgpt%E7%94%9F%E6%88%90%EF%BC%8C%E6%B3%A8%E6%84%8F%E8%BE%A8%E5%88%AB"><span class="toc-number">1.</span> <span class="toc-text">以下内容是由chatgpt生成，注意辨别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MATLAB-%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%EF%BC%9A%E7%AA%97%E5%8F%A3%E5%91%BD%E4%BB%A4%E3%80%81%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4%E3%80%81%E6%98%BE%E7%A4%BA%E6%A0%BC%E5%BC%8F%E8%AE%BE%E7%BD%AE%E5%91%BD%E4%BB%A4%E3%80%81%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E5%92%8C%E5%B8%AE%E5%8A%A9%E5%91%BD%E4%BB%A4%E3%80%82"><span class="toc-number">2.</span> <span class="toc-text">MATLAB 的基本操作命令：窗口命令、工作空间管理命令、显示格式设置命令、文件操作命令和帮助命令。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E8%B5%8B%E5%80%BC%E3%80%81%E6%89%A9%E5%B1%95%E6%88%96%E8%80%85%E7%BC%A9%E5%B0%8F%E7%9F%A9%E9%98%B5%E7%BB%B4%E6%95%B0%E7%9A%84%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E5%86%92%E5%8F%B7%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BD%9C%E7%94%A8%E3%80%82"><span class="toc-number">3.</span> <span class="toc-text">矩阵的赋值、扩展或者缩小矩阵维数的方法以及冒号运算符的作用。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MATLAB-%E5%86%85%E9%83%A8%E7%9A%84%E7%89%B9%E6%AE%8A%E5%8F%98%E9%87%8F%E5%92%8C%E5%B8%B8%E6%95%B0"><span class="toc-number">4.</span> <span class="toc-text">MATLAB 内部的特殊变量和常数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%8D%E6%95%B0%E7%9F%A9%E9%98%B5%E7%9A%84%E4%B8%A4%E7%A7%8D%E8%B5%8B%E5%80%BC%E6%96%B9%E6%B3%95%E5%8F%8A%E5%85%B6%E5%8C%BA%E5%88%AB"><span class="toc-number">5.</span> <span class="toc-text">复数矩阵的两种赋值方法及其区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6%E3%80%81%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">6.</span> <span class="toc-text">算术运算符、关系运算符和逻辑运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#if-switch-while-%E5%92%8C-for-%E8%AF%AD%E5%8F%A5%E7%9A%84%E7%BC%96%E7%A8%8B"><span class="toc-number">7.</span> <span class="toc-text">if, switch, while 和 for 语句的编程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%AE%E7%9B%98%E8%BE%93%E5%85%A5%E5%91%BD%E4%BB%A4-input%E3%80%81%E6%9A%82%E5%81%9C%E8%BF%90%E8%A1%8C-pause-%E5%92%8C%E6%98%BE%E7%A4%BA%E5%91%BD%E4%BB%A4-disp-%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">8.</span> <span class="toc-text">键盘输入命令 input、暂停运行 pause 和显示命令 disp 的使用方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%8C%E6%8F%A1%E6%8C%87%E6%95%B0%E3%80%81%E5%AF%B9%E6%95%B0%E5%92%8C%E5%B9%B3%E6%96%B9%E6%A0%B9%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">9.</span> <span class="toc-text">掌握指数、对数和平方根函数的使用方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82%E5%A4%8D%E6%95%B0%E7%9A%84%E5%AE%9E%E9%83%A8%E3%80%81%E8%99%9A%E9%83%A8%E3%80%81%E6%A8%A1%E3%80%81%E7%9B%B8%E4%BD%8D%EF%BC%88%E8%A7%92%E5%BA%A6%EF%BC%89%E5%92%8C%E5%85%B1%E8%BD%AD%E5%AF%B9%E5%BA%94%E7%9A%84-MATLAB-%E5%91%BD%E4%BB%A4"><span class="toc-number">10.</span> <span class="toc-text">求复数的实部、虚部、模、相位（角度）和共轭对应的 MATLAB 命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E6%95%B0%E5%8F%98%E6%88%90%E6%95%B4%E6%95%B0%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%96%B9%E6%B3%95%EF%BC%88fix%E3%80%81round%E3%80%81floor-%E5%92%8C-ceil%EF%BC%89-mod-%E5%92%8C-rem-%E5%87%BD%E6%95%B0%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">11.</span> <span class="toc-text">小数变成整数的四种方法（fix、round、floor 和 ceil）, mod 和 rem 函数的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#plot%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8-MATLAB-%E5%91%BD%E4%BB%A4%E5%AF%B9%E5%9B%BE%E5%BD%A2%E8%BF%9B%E8%A1%8C%E4%BF%AE%E9%A5%B0%EF%BC%88%E5%A6%82%E5%8A%A0%E6%A8%AA%E5%9D%90%E6%A0%87%E3%80%81%E7%BA%B5%E5%9D%90%E6%A0%87%E3%80%81%E6%A0%87%E9%A2%98%E5%92%8C%E5%9B%BE%E5%BD%A2%E6%A0%87%E6%B3%A8"><span class="toc-number">12.</span> <span class="toc-text">plot函数的使用方法以及如何利用 MATLAB 命令对图形进行修饰（如加横坐标、纵坐标、标题和图形标注</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E7%BB%B4%E7%BB%98%E5%9B%BE%E5%87%BD%E6%95%B0-stem%EF%BC%88%E6%A3%92%E7%8A%B6%E5%9B%BE%EF%BC%89%E3%80%81stairs%EF%BC%88%E9%98%B6%E6%A2%AF%E5%9B%BE%EF%BC%89%E3%80%81polar%EF%BC%88%E6%9E%81%E5%9D%90%E6%A0%87%EF%BC%89%E5%92%8C-pie%EF%BC%88%E9%A5%BC%E5%9B%BE%EF%BC%89%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">13.</span> <span class="toc-text">二维绘图函数 stem（棒状图）、stairs（阶梯图）、polar（极坐标）和 pie（饼图）的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8C%E4%B8%80%E5%B9%85%E5%9B%BE%E9%87%8C%E9%9D%A2%E7%BB%98%E5%88%B6%E5%A4%9A%E6%9D%A1%E6%9B%B2%E7%BA%BF%E5%B8%B8%E7%94%A8%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%96%B9%E6%B3%95"><span class="toc-number">14.</span> <span class="toc-text">同一幅图里面绘制多条曲线常用的四种方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E7%BB%B4%E7%BB%98%E5%9B%BE%E5%87%BD%E6%95%B0-plot3%E3%80%81mesh%E3%80%81surf-%E5%92%8C-pie3-%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">15.</span> <span class="toc-text">三维绘图函数 plot3、mesh、surf 和 pie3 的使用方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MATLAB-%E7%9A%84%E4%B8%89%E6%9D%A1%E5%8A%A8%E7%94%BB%E5%91%BD%E4%BB%A4"><span class="toc-number">16.</span> <span class="toc-text">MATLAB 的三条动画命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#matlab%E4%B8%AD%E5%87%BD%E6%95%B0%E7%BC%96%E5%86%99%E5%92%8C%E8%B0%83%E7%94%A8"><span class="toc-number">17.</span> <span class="toc-text">matlab中函数编写和调用</span></a></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="https://scumtb.cn/2023/05/28/MATLAB%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E5%A4%8D%E4%B9%A0/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="ScumTB"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="ScumTB's Site"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">MATLAB期末考试-使用chatgpt复习</h1><div class="post-meta"><div class="post-time"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-line"></span></span> <time title="Created: 2023-05-28 04:12:38" itemprop="dateCreated datePublished" datetime="2023-05-28T04:12:38+08:00">2023-05-28</time></div><div class="post-classify"></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><h2 id="以下内容是由chatgpt生成，注意辨别"><a href="#以下内容是由chatgpt生成，注意辨别" class="headerlink" title="以下内容是由chatgpt生成，注意辨别"></a>以下内容是由chatgpt生成，注意辨别</h2><hr>
+<h2 id="MATLAB-的基本操作命令：窗口命令、工作空间管理命令、显示格式设置命令、文件操作命令和帮助命令。"><a href="#MATLAB-的基本操作命令：窗口命令、工作空间管理命令、显示格式设置命令、文件操作命令和帮助命令。" class="headerlink" title="MATLAB 的基本操作命令：窗口命令、工作空间管理命令、显示格式设置命令、文件操作命令和帮助命令。"></a>MATLAB 的基本操作命令：窗口命令、工作空间管理命令、显示格式设置命令、文件操作命令和帮助命令。</h2><p>MATLAB 的基本操作命令主要包括以下五个方面：</p>
+<ol>
+<li>窗口命令：用于控制 MATLAB 的窗口和视图</li>
+</ol>
+<ul>
+<li><code>clc</code>：清空命令窗口</li>
+<li><code>close all</code>：关闭所有图形窗口</li>
+<li><code>figure</code>：创建新图形窗口</li>
+<li><code>hold on</code>、<code>hold off</code>：控制是否在同一图形窗口中添加多个图形</li>
+</ul>
+<ol start="2">
+<li>工作空间管理命令：用于管理 MATLAB 的变量和函数</li>
+</ol>
+<ul>
+<li><code>who</code>、<code>whos</code>：查看当前工作区中的变量信息</li>
+<li><code>clear</code>、<code>clear all</code>：清空变量、清空工作空间</li>
+<li><code>save</code>、<code>load</code>：将变量或工作空间保存到文件中、从文件中读取工作空间变量</li>
+<li><code>workspace</code>、<code>history</code>、<code>search</code>：工作空间信息的管理和搜索</li>
+</ul>
+<ol start="3">
+<li>显示格式设置命令：用于设置数值、日期、字符串等的显示格式</li>
+</ol>
+<ul>
+<li><code>format</code>：控制数值的显示格式</li>
+<li><code>datetick</code>、<code>datestr</code>：控制日期和时间的显示格式</li>
+<li><code>disp</code>、<code>fprintf</code>：控制字符串的显示格式</li>
+</ul>
+<ol start="4">
+<li>文件操作命令：用于在 MATLAB 中读写文件</li>
+</ol>
+<ul>
+<li><code>dir</code>、<code>cd</code>、<code>pwd</code>：文件夹路径操作相关命令</li>
+<li><code>fopen</code>、<code>fclose</code>、<code>fgetl</code>、<code>fprintf</code>、<code>fwrite</code>、<code>fread</code>：对文件的访问操作</li>
+<li><code>xlswrite</code>、<code>xlsread</code>、<code>csvwrite</code>、<code>csvread</code>：读写 Excel 和 CSV 文件相关命令</li>
+</ul>
+<ol start="5">
+<li>帮助命令：用于查找 MATLAB 相关的帮助信息</li>
+</ol>
+<ul>
+<li><code>help</code>、<code>doc</code>：获取 MATLAB 内置或外部函数的帮助文档</li>
+<li><code>lookfor</code>、<code>which</code>：查找函数的帮助信息</li>
+</ul>
+<h2 id="矩阵的赋值、扩展或者缩小矩阵维数的方法以及冒号运算符的作用。"><a href="#矩阵的赋值、扩展或者缩小矩阵维数的方法以及冒号运算符的作用。" class="headerlink" title="矩阵的赋值、扩展或者缩小矩阵维数的方法以及冒号运算符的作用。"></a>矩阵的赋值、扩展或者缩小矩阵维数的方法以及冒号运算符的作用。</h2><p>MATLAB 中矩阵的赋值可以通过以下三种形式进行：</p>
+<ol>
+<li>直接赋值</li>
+</ol>
+<p>可以使用等号对变量赋值，即将一个矩阵赋值给另一个矩阵，例如：</p>
+<pre class="language-none"><code class="language-none">A &#x3D; [1 2 3; 4 5 6; 7 8 9];</code></pre>
+
+<p>这样就创建了一个 3 行 3 列的矩阵 A。</p>
+<ol start="2">
+<li>冒号运算符</li>
+</ol>
+<p>冒号运算符可以用于创建元素在一定区间内的行向量或列向量，例如：</p>
+<pre class="language-none"><code class="language-none">x &#x3D; 1:10; % 创建一个行向量，元素从 1 到 10 顺序排列
+y &#x3D; 0:.2:1; % 创建一个行向量，元素从 0 到 1，步长为 0.2
+v &#x3D; （1：10）’%创建一个列向量，元素重1到10</code></pre>
+
+<ol start="3">
+<li>函数赋值</li>
+</ol>
+<p>MATLAB 提供了很多函数来创建一些特殊类型的矩阵，例如：</p>
+<pre class="language-none"><code class="language-none">eye(3) % 创建一个 3 行 3 列的单位矩阵
+zeros(2, 3) % 创建一个 2 行 3 列的全零矩阵
+ones(2, 4) % 创建一个 2 行 4 列的全为 1 的矩阵</code></pre>
+
+<p>对于矩阵的扩展或缩小矩阵维数的方法，可以使用以下函数：</p>
+<ol>
+<li><code>reshape</code> 函数</li>
+</ol>
+<p><code>reshape</code> 函数可以将一个矩阵改变为其他不同大小的矩阵，例如：</p>
+<pre class="language-none"><code class="language-none">A &#x3D; [1 2 3 4; 5 6 7 8; 9 10 11 12];
+B &#x3D; reshape(A, 4, 3); % 将原矩阵 A 改变为 4 行 3 列的矩阵</code></pre>
+
+<ol start="2">
+<li><code>repmat</code> 函数</li>
+</ol>
+<p><code>repmat</code> 函数可以将一个矩阵扩展成一个更大的矩阵，例如：</p>
+<pre class="language-none"><code class="language-none">A &#x3D; [1 2; 3 4];
+B &#x3D; repmat(A, 2, 3); % 将原矩阵 A 在行方向上重复 2 次，在列方向上重复 3 次</code></pre>
+
+<p>冒号运算符可以用于索引矩阵中的元素，例如：</p>
+<pre class="language-none"><code class="language-none">A &#x3D; [1 2 3; 4 5 6; 7 8 9];
+B &#x3D; A(:, 2); % 取出 A 矩阵的第二列
+C &#x3D; A(2, :); % 取出 A 矩阵的第二行
+D &#x3D; A(1:2, 2:3); % 取出 A 矩阵的左上角 2x2 子矩阵</code></pre>
+
+<h2 id="MATLAB-内部的特殊变量和常数"><a href="#MATLAB-内部的特殊变量和常数" class="headerlink" title="MATLAB 内部的特殊变量和常数"></a>MATLAB 内部的特殊变量和常数</h2><p>MATLAB 中有一些内建的特殊变量和常数，在编程时可以直接使用。下面是其中一些常用的变量和常数：</p>
+<ol>
+<li><p><code>ans</code>：最近一个计算结果的值。如果没有把计算结果赋值给变量，则 MATLAB 将结果存储在 <code>ans</code> 变量中。</p>
+</li>
+<li><p><code>pi</code>：圆周率值，即 3.1416…，在计算圆和球体相关的公式时经常用到。</p>
+</li>
+<li><p><code>inf</code>：正无穷大，表示比任意实数都大的数。</p>
+</li>
+<li><p><code>NaN</code>：表示计算结果非数字。如果在计算过程中遇到了不能处理的值（例如除以零），MATLAB 将返回 <code>NaN</code>。</p>
+</li>
+<li><p><code>eps</code>：机器精度，即计算机能够区分的最小浮点数值。在数值计算中，可以使用机器精度来估计误差。</p>
+</li>
+</ol>
+<p>除了上述常用的变量和常数之外，MATLAB 还有许多其他的内建变量和常数，例如：</p>
+<ol>
+<li><p><code>i</code> 和 <code>j</code>：虚数单位，即复数运算中的平方根，可用于表示复数。</p>
+</li>
+<li><p><code>realmin</code> 和 <code>realmax</code>：浮点数可表示的最小和最大值。</p>
+</li>
+<li><p><code>true</code> 和 <code>false</code>：逻辑真和逻辑假。</p>
+</li>
+<li><p><code>nargin</code> 和 <code>nargout</code>：当前函数调用时输入和输出参数的数量。</p>
+</li>
+<li><p><code>version</code>：MATLAB 版本信息，例如当前使用的版本号和发布日期等。</p>
+</li>
+</ol>
+<p>总之，MATLAB 中有很多内建的特殊变量和常数，这些变量和常数可以在编程时直接使用，很大程度上方便了编程工作。</p>
+<h2 id="复数矩阵的两种赋值方法及其区别"><a href="#复数矩阵的两种赋值方法及其区别" class="headerlink" title="复数矩阵的两种赋值方法及其区别"></a>复数矩阵的两种赋值方法及其区别</h2><p>方法1：指定实部和虚部部分</p>
+<p>这种方法在矩阵的每个位置上都需要指定实部和虚部，具体的赋值方式为：</p>
+<pre class="language-none"><code class="language-none">A &#x3D; [1 + 2i, 2 + 3i; 3 + 4i, 4 + 5i];</code></pre>
+
+<p>这个语句将构造一个 2 行 2 列的复数矩阵。其中左上角的元素为 1 + 2i，右下角的元素为 4 + 5i。</p>
+<p>方法2：使用矩阵函数</p>
+<p>MATLAB提供了一系列特殊的矩阵函数，可以用来构造一些特殊类型的矩阵。例如，可以使用 <code>ones</code> 函数来构造全为 1 的复数矩阵，如下所示：</p>
+<pre class="language-none"><code class="language-none">A &#x3D; ones(2) + j*ones(2);</code></pre>
+
+<p>这个语句将构造一个 2 行 2 列的复数矩阵。其中左上角和右下角的元素为 1 + 1i（或 j），右上角和左下角的元素为 1 - 1i（或 -j）。</p>
+<p>这两种方法在构造复数矩阵时的区别在于，使用指定实部和虚部的方式不仅可以构造一般的复数矩阵，还可以构造实矩阵和纯虚矩阵。例如：</p>
+<pre class="language-none"><code class="language-none">B &#x3D; [1, 2; 3, 4i];</code></pre>
+
+<p>这个语句将构造一个 2 行 2 列的复数矩阵 B，其中左上角的元素为 1，右下角的元素为 4i，右上角和左下角的元素均为 0。这样的矩阵称为纯虚矩阵。而如果只用矩阵函数构造矩阵，例如 <code>ones</code> 函数，只能构造实数矩阵。因此，使用指定实部和虚部的方式更加灵活。</p>
+<h2 id="算术运算符、关系运算符和逻辑运算符"><a href="#算术运算符、关系运算符和逻辑运算符" class="headerlink" title="算术运算符、关系运算符和逻辑运算符"></a>算术运算符、关系运算符和逻辑运算符</h2><p>在MATLAB中，有三类基本的运算符分别是算术运算符、关系运算符和逻辑运算符。</p>
+<ol>
+<li>算术运算符</li>
+</ol>
+<p>算术运算符可以用来对数值进行加、减、乘、除和幂运算。</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>操作</th>
+<th>示例</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+</td>
+<td>加法</td>
+<td><code>2 + 3</code></td>
+<td>5</td>
+</tr>
+<tr>
+<td>-</td>
+<td>减法</td>
+<td><code>2 - 3</code></td>
+<td>-1</td>
+</tr>
+<tr>
+<td>*</td>
+<td>乘法</td>
+<td><code>2 * 3</code></td>
+<td>6</td>
+</tr>
+<tr>
+<td>&#x2F;</td>
+<td>除法</td>
+<td><code>10 / 5</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td>.</td>
+<td>点乘</td>
+<td><code>[1 2] .* [3 4]</code></td>
+<td><code>[3 8]</code></td>
+</tr>
+<tr>
+<td>^</td>
+<td>幂运算</td>
+<td><code>2^3</code></td>
+<td>8</td>
+</tr>
+</tbody></table>
+<p>需要注意的是，点乘运算符中的点只在两个数组或矩阵的相应元素两边出现，这个运算符返回元素乘积组成的新的数组或矩阵，并不是矩阵的点积或向量的内积。幂运算符也需要特别注意，它用于计算一个数的幂，例如 2 的 3 次方就是 <code>2^3</code>。</p>
+<ol start="2">
+<li>关系运算符</li>
+</ol>
+<p>关系运算符通常用于比较数值之间的大小关系，它返回一个逻辑真（1）或逻辑假（0）的值。</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>操作</th>
+<th>示例</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&gt;</td>
+<td>大于</td>
+<td><code>3 &gt; 2</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>小于</td>
+<td><code>3 &lt; 2</code></td>
+<td>0</td>
+</tr>
+<tr>
+<td>&gt;&#x3D;</td>
+<td>大于等于</td>
+<td><code>3 &gt;= 2</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td>&lt;&#x3D;</td>
+<td>小于等于</td>
+<td><code>3 &lt;= 2</code></td>
+<td>0</td>
+</tr>
+<tr>
+<td>&#x3D;&#x3D;</td>
+<td>等于</td>
+<td><code>3 == 2</code></td>
+<td>0</td>
+</tr>
+<tr>
+<td>~&#x3D;&#96;</td>
+<td>不等于</td>
+<td><code>3 ~= 2</code></td>
+<td>1</td>
+</tr>
+</tbody></table>
+<p>需要注意的是，相对于数值运算符，关系运算符通常使用在不同类型的数值之间，例如不同数值类型的矩阵或向量、数值类型和字符类型的常数，还有适用于复数、字符比较的运算符，这里不再赘述。</p>
+<ol start="3">
+<li>逻辑运算符</li>
+</ol>
+<p>逻辑运算符可以用于组合或改变逻辑表达式，它常常出现在条件语句、循环语句等语句中，用于构建复杂的逻辑表达式。</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>操作</th>
+<th>示例</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&amp;</td>
+<td>逻辑与</td>
+<td><code>a &amp; b</code></td>
+<td>如果 both <code>a</code> 和 <code>b</code> 为 true，则输出 true，否则输出 false。</td>
+</tr>
+<tr>
+<td>|</td>
+<td>逻辑或</td>
+<td><code>a | b</code></td>
+<td>如果 either <code>a</code> 或 <code>b</code> 为 true，则输出 true，否则输出 false。</td>
+</tr>
+<tr>
+<td>~</td>
+<td>逻辑非</td>
+<td><code>~a</code></td>
+<td>如果 <code>a</code> 为 false，则输出 true，否则输出 false。</td>
+</tr>
+<tr>
+<td>xor</td>
+<td>异或</td>
+<td><code>xor(a,b)</code></td>
+<td>如果 <code>a</code> xor <code>b</code> 为 true，则输出 true，否则输出 false。</td>
+</tr>
+</tbody></table>
+<p>需要注意的是，当使用逻辑运算符对矩阵或向量进行运算时，运算符会逐元素地执行运算，并返回一个逻辑值的矩阵或向量。</p>
+<h2 id="if-switch-while-和-for-语句的编程"><a href="#if-switch-while-和-for-语句的编程" class="headerlink" title="if, switch, while 和 for 语句的编程"></a>if, switch, while 和 for 语句的编程</h2><p>在 MATLAB 中，有几种常见的语句可以用于编写循环、条件判断等程序控制流。</p>
+<ol>
+<li>if 语句</li>
+</ol>
+<p>if 语句用于根据表达式的值的真假分支判断程序是否执行某些代码。可以根据情况使用 <code>elseif</code> 和 <code>else</code> 来进一步细化分支流程。</p>
+<pre class="language-none"><code class="language-none">if 表达式1
+    代码块1
+elseif 表达式2
+    代码块2
+else
+    代码块3
+end</code></pre>
+
+<ol start="2">
+<li>switch 语句</li>
+</ol>
+<p>switch 语句用于根据表达式的值匹配一个或多个情况，并执行相应的代码块。</p>
+<pre class="language-none"><code class="language-none">switch 表达式
+    case 值1
+        代码块1
+    case 值2
+        代码块2
+    otherwise
+        代码块3
+end</code></pre>
+
+<ol start="3">
+<li>while 语句</li>
+</ol>
+<p>while 语句用于重复执行一段代码，直到一个条件为假为止。</p>
+<pre class="language-none"><code class="language-none">while 表达式
+    代码块
+end</code></pre>
+
+<ol start="4">
+<li>for 语句</li>
+</ol>
+<p>for 语句用于重复执行一段代码，一般用于遍历一个数组或向量的元素。</p>
+<pre class="language-none"><code class="language-none">for 循环变量 &#x3D; 表达式
+    代码块
+end</code></pre>
+
+<p>在上述语句中，循环变量可以是矩阵中的每个元素，也可以是向量中的每个元素。此外，这些语句都支持嵌套使用，可以组合成更复杂的程序控制结构。</p>
+<p>下面是一些示例代码：</p>
+<p>if 语句：</p>
+<pre class="language-none"><code class="language-none">a &#x3D; 10;
+if a &gt; 0
+    disp(&#39;a is positive&#39;);
+elseif a &lt; 0
+    disp(&#39;a is negative&#39;);
+else
+    disp(&#39;a is zero&#39;);
+end</code></pre>
+
+<p>switch 语句：</p>
+<pre class="language-none"><code class="language-none">day &#x3D; 5;
+switch day
+    case 1
+        disp(&#39;Monday&#39;);
+    case 2
+        disp(&#39;Tuesday&#39;);
+    case 3
+        disp(&#39;Wednesday&#39;);
+    case 4
+        disp(&#39;Thursday&#39;);
+    case 5
+        disp(&#39;Friday&#39;);
+    otherwise
+        disp(&#39;Weekend&#39;);
+end</code></pre>
+
+<p>while 语句：</p>
+<pre class="language-none"><code class="language-none">count &#x3D; 0;
+while count &lt; 10
+    disp(count);
+    count &#x3D; count + 1;
+end</code></pre>
+
+<p>for 语句：</p>
+<pre class="language-none"><code class="language-none">A &#x3D; [1 2 3; 4 5 6; 7 8 9];
+for i &#x3D; A
+    disp(i);
+end</code></pre>
+<h2 id="键盘输入命令-input、暂停运行-pause-和显示命令-disp-的使用方法"><a href="#键盘输入命令-input、暂停运行-pause-和显示命令-disp-的使用方法" class="headerlink" title="键盘输入命令 input、暂停运行 pause 和显示命令 disp 的使用方法"></a>键盘输入命令 input、暂停运行 pause 和显示命令 disp 的使用方法</h2><p>在 MATLAB 中，有一些常用的输入输出命令，包括 <code>input</code>、<code>disp</code> 和 <code>pause</code> 等命令，用于与用户交互或输出程序结果。</p>
+<ol>
+<li>input 命令</li>
+</ol>
+<p><code>input</code> 命令用于从键盘获取用户的输入，语法格式如下：</p>
+<pre class="language-none"><code class="language-none">variable &#x3D; input(&#39;prompt&#39;);</code></pre>
+
+<p>其中，<code>prompt</code> 为一个字符串，用于提示用户进行输入，<code>variable</code> 为获取到的用户输入值，可以是一个数值、矩阵、向量或字符类型。</p>
+<p>举个例子：</p>
+<pre class="language-none"><code class="language-none">name &#x3D; input(&#39;what is your name?&#39;,&#39;s&#39;);</code></pre>
+
+<p>上述代码将从键盘获取用户的输入名字，并将其存储为字符类型的变量 <code>name</code>，’s’ 参数表示表示从标准输入（键盘）获取字符类型的输入。</p>
+<ol start="2">
+<li>disp 命令</li>
+</ol>
+<p><code>disp</code> 命令用于在 MATLAB 中显示输出结果，语法格式如下：</p>
+<pre class="language-none"><code class="language-none">disp(expression);</code></pre>
+
+<p>其中，<code>expression</code> 为要显示的表达式，可以是数值、矩阵、向量或字符等类型。</p>
+<p>示例代码：</p>
+<pre class="language-none"><code class="language-none">a &#x3D; 10;
+disp([&#39;The value of a is &#39;, num2str(a)]);</code></pre>
+
+<p>上述代码中，使用 <code>disp</code> 命令输出 a 变量的值，并将变量值转换为字符串，并与一个提示语一起组成一个字符串一起进行显示。</p>
+<ol start="3">
+<li>pause 命令</li>
+</ol>
+<p><code>pause</code> 命令可以暂停 MATLAB 程序的执行，在等待用户按下任意键之前，程序会暂停运行。语法格式如下：</p>
+<pre class="language-none"><code class="language-none">pause(time);</code></pre>
+
+<p>其中，<code>time</code> 参数为暂停时间，单位为秒。如果不指定参数，则默认暂停时间为 5 秒。</p>
+<p>示例代码:</p>
+<pre class="language-none"><code class="language-none">disp(&#39;First message&#39;);
+pause(2); % Wait for 2 seconds
+disp(&#39;Second message&#39;);</code></pre>
+
+<p>上述代码依次显示两个消息，之间隔了 2 秒钟。这样，可以实现程序在指定时间暂停执行。</p>
+<h2 id="掌握指数、对数和平方根函数的使用方法"><a href="#掌握指数、对数和平方根函数的使用方法" class="headerlink" title="掌握指数、对数和平方根函数的使用方法"></a>掌握指数、对数和平方根函数的使用方法</h2><p>在 MATLAB 中，使用指数、对数和平方根函数可以计算复杂的数学函数。</p>
+<ol>
+<li>指数函数</li>
+</ol>
+<p>指数函数可以用 <code>exp</code> 函数来实现，对于非常大的值，还可以使用 <code>expm1</code> 函数来进行计算。</p>
+<pre class="language-none"><code class="language-none">y&#x3D;exp(x);
+y&#x3D;expm1(x);</code></pre>
+
+<p>其中，<code>x</code> 为指数函数的参数，<code>expm1(x)</code> 用于计算 $e^x-1$，避免了在 $x$ 非常接近于 0 的情况下，<code>x</code> 与小数点后的部分被舍去，从而导致精度的损失。</p>
+<ol start="2">
+<li>对数函数</li>
+</ol>
+<p>MATLAB 中常用的对数函数有自然对数函数 <code>log</code> 和常用对数函数 <code>log10</code>。语法格式如下：</p>
+<pre class="language-none"><code class="language-none">y &#x3D; log(x);
+y &#x3D; log10(x);</code></pre>
+
+<p>其中，<code>x</code> 为对数函数的参数，<code>y</code> 为对数函数的计算结果。</p>
+<p>需要注意的是，当 <code>$x$</code> 对于自然对数函数 <code>$ln(x)$</code> 时，当 <code>$x$</code> 的值 $&gt;0$, 该函数有定义，否则无定义。</p>
+<ol start="3">
+<li>平方根函数</li>
+</ol>
+<p>MATLAB 中平方根函数为 <code>sqrt</code>，其形式如下：</p>
+<pre class="language-none"><code class="language-none">y &#x3D; sqrt(x);</code></pre>
+
+<p>其中，<code>x</code> 为待计算的数字，<code>y</code> 为计算结果，表示 <code>x</code> 的平方根。</p>
+<p>示例代码：</p>
+<p>下面是一些 MATLAB 代码，在命令窗口中输入可以体验上述三种函数的使用：</p>
+<pre class="language-none"><code class="language-none">x &#x3D; 2;
+y &#x3D; exp(x);
+disp(y);</code></pre>
+
+<pre class="language-none"><code class="language-none">x &#x3D; 10;
+y &#x3D; log(x);
+z &#x3D; log10(x);
+disp(y);
+disp(z);</code></pre>
+
+<pre class="language-none"><code class="language-none">x &#x3D; 25;
+y &#x3D; sqrt(x);
+disp(y);</code></pre>
+<h2 id="求复数的实部、虚部、模、相位（角度）和共轭对应的-MATLAB-命令"><a href="#求复数的实部、虚部、模、相位（角度）和共轭对应的-MATLAB-命令" class="headerlink" title="求复数的实部、虚部、模、相位（角度）和共轭对应的 MATLAB 命令"></a>求复数的实部、虚部、模、相位（角度）和共轭对应的 MATLAB 命令</h2><p>在 MATLAB 中，可以使用常见的函数计算复数的实部、虚部、模、相位（角度）和共轭。具体的 MATLAB 命令如下：</p>
+<ol>
+<li>实部和虚部</li>
+</ol>
+<pre class="language-none"><code class="language-none">real(z)   % 计算复数 z 的实部
+imag(z)   % 计算复数 z 的虚部</code></pre>
+
+<p>其中，<code>z</code> 为待计算的复数。</p>
+<ol start="2">
+<li>模和相位（角度）</li>
+</ol>
+<pre class="language-none"><code class="language-none">abs(z)     % 计算复数 z 的模，即 |z|
+angle(z)   % 计算复数 z 的相位，即 arg(z)，单位为弧度
+rad2deg()  % 将弧度转化为角度</code></pre>
+
+<p>其中，<code>z</code> 为待计算的复数。</p>
+<p>需要注意的是，<code>angle(z)</code> 的计算结果范围为 $(-\pi, \pi]$，单位为弧度，可以使用 <code>rad2deg()</code> 函数将其转化为角度。</p>
+<ol start="3">
+<li>共轭</li>
+</ol>
+<pre class="language-none"><code class="language-none">conj(z)   % 计算复数 z 的共轭</code></pre>
+
+<p>其中，<code>z</code> 为待计算的复数。</p>
+<p>示例代码：</p>
+<p>下面是几个示例演示如何使用上述函数计算复数的实部、虚部、模、相位和共轭：</p>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab">z <span class="token operator">=</span> <span class="token number">3</span> <span class="token operator">+</span> <span class="token number">4i</span><span class="token punctuation">;</span>
+<span class="token function">disp</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'实部: '</span><span class="token punctuation">,</span> <span class="token function">num2str</span><span class="token punctuation">(</span><span class="token function">real</span><span class="token punctuation">(</span>z<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">% 输出实部</span>
+<span class="token function">disp</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'虚部: '</span><span class="token punctuation">,</span> <span class="token function">num2str</span><span class="token punctuation">(</span><span class="token function">imag</span><span class="token punctuation">(</span>z<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">% 输出虚部</span>
+<span class="token function">disp</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'模: '</span><span class="token punctuation">,</span> <span class="token function">num2str</span><span class="token punctuation">(</span><span class="token function">abs</span><span class="token punctuation">(</span>z<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">% 输出模</span>
+<span class="token function">disp</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'相位: '</span><span class="token punctuation">,</span> <span class="token function">num2str</span><span class="token punctuation">(</span><span class="token function">rad2deg</span><span class="token punctuation">(</span><span class="token function">angle</span><span class="token punctuation">(</span>z<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token string">' 度'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">% 输出相位</span>
+<span class="token function">disp</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'共轭: '</span><span class="token punctuation">,</span> <span class="token function">num2str</span><span class="token punctuation">(</span><span class="token function">conj</span><span class="token punctuation">(</span>z<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">% 输出共轭</span></code></pre>
+
+<p>执行上述代码，将会输出以下结果：</p>
+<pre class="language-none"><code class="language-none">实部: 3
+虚部: 4
+模: 5
+相位: 53.1301 度
+共轭: 3-4i</code></pre>
+
+<p>其中，实部为 3，虚部为 4，模为 $\sqrt{3^2+4^2}&#x3D;5$，相位为 $\arctan(\frac{4}{3}) \approx 53.13\degree$，共轭为 $3-4i$。</p>
+<h2 id="小数变成整数的四种方法（fix、round、floor-和-ceil）-mod-和-rem-函数的区别"><a href="#小数变成整数的四种方法（fix、round、floor-和-ceil）-mod-和-rem-函数的区别" class="headerlink" title="小数变成整数的四种方法（fix、round、floor 和 ceil）, mod 和 rem 函数的区别"></a>小数变成整数的四种方法（fix、round、floor 和 ceil）, mod 和 rem 函数的区别</h2><p>在 MATLAB 中，可以使用 <code>fix</code>、<code>round</code>、<code>floor</code> 和 <code>ceil</code> 函数，将浮点数转换为整数。</p>
+<ol>
+<li>fix 函数</li>
+</ol>
+<p><code>fix</code> 函数用于向零舍入，将小数部分截取掉，返回最接近零的整数。</p>
+<pre class="language-none"><code class="language-none">a &#x3D; fix(3.14); % a 等于 3
+b &#x3D; fix(-3.14); % b 等于 -3</code></pre>
+
+<ol start="2">
+<li>round 函数</li>
+</ol>
+<p><code>round</code> 函数用于四舍五入，将小数部分进行四舍五入，返回最接近的整数。</p>
+<pre class="language-none"><code class="language-none">a &#x3D; round(3.14); % a 等于 3
+b &#x3D; round(-3.14); % b 等于 -3</code></pre>
+
+<ol start="3">
+<li>floor 函数</li>
+</ol>
+<p><code>floor</code> 函数用于向下取整，将小数部分向下取整，返回最接近且不大于原值的整数。</p>
+<pre class="language-none"><code class="language-none">a &#x3D; floor(3.14); % a 等于 3
+b &#x3D; floor(-3.14); % b 等于 -4</code></pre>
+
+<ol start="4">
+<li>ceil 函数</li>
+</ol>
+<p><code>ceil</code> 函数用于向上取整，将小数部分向上取整，返回最接近且不小于原值的整数。</p>
+<pre class="language-none"><code class="language-none">a &#x3D; ceil(3.14); % a 等于 4
+b &#x3D; ceil(-3.14); % b 等于 -3</code></pre>
+
+<p>需要注意的是，对于负数，<code>fix</code> 函数会向零舍入，相当于 <code>sign(x) * floor(abs(x))</code>；而 <code>round</code>、<code>floor</code> 和 <code>ceil</code> 函数会根据小数部分的大小进行取整。</p>
+<p>此外，MATLAB 还提供了 <code>mod</code> 和 <code>rem</code> 函数，这两个函数用于计算模运算的结果，它们的区别在于对于负数的处理方式不同。具体来说， <code>mod</code> 函数的结果与被除数的符号相同，而 <code>rem</code> 函数的结果与除数的符号相同。示例如下：</p>
+<pre class="language-none"><code class="language-none">a &#x3D; mod(-5, 3)   % a 等于 1，因为 -5 &#x3D; (-2) * 3 + 1
+b &#x3D; rem(-5, 3)   % b 等于 -2，因为 -5 &#x3D; (-1) * 3 - 2</code></pre>
+
+<p>可以看出，<code>mod</code> 函数得到的结果是正数，而 <code>rem</code> 函数得到的结果是负数。这点需要特别注意。</p>
+<h2 id="plot函数的使用方法以及如何利用-MATLAB-命令对图形进行修饰（如加横坐标、纵坐标、标题和图形标注"><a href="#plot函数的使用方法以及如何利用-MATLAB-命令对图形进行修饰（如加横坐标、纵坐标、标题和图形标注" class="headerlink" title="plot函数的使用方法以及如何利用 MATLAB 命令对图形进行修饰（如加横坐标、纵坐标、标题和图形标注"></a>plot函数的使用方法以及如何利用 MATLAB 命令对图形进行修饰（如加横坐标、纵坐标、标题和图形标注</h2><p>在 MATLAB 中，<code>plot</code> 函数是用于绘制二维图形的函数，能够绘制线性和非线性函数、数据曲线等等。下面简单介绍 <code>plot</code> 函数的使用方法以及如何对图形进行修饰。</p>
+<ol>
+<li>plot 函数的使用方法</li>
+</ol>
+<pre class="language-none"><code class="language-none">plot(Y)        % 绘制 Y 向量的数据曲线，横坐标为 1:n
+plot(X,Y)      % 绘制向量 X 和 Y 的数据曲线
+plot(X1,Y1,...)% 绘制多条曲线</code></pre>
+
+<p>其中，<code>X</code> 和 <code>Y</code> 是长度相同的向量，表示数据点的横、纵坐标。调用 <code>plot</code> 函数后，将会按照一定的线条样式绘制出这些点，可以通过更改线条样式来控制曲线的样式。</p>
+<ol start="2">
+<li>对图形进行修饰</li>
+</ol>
+<p>绘制出图形之后，我们通常还需要对其进行一些调整和修饰，比如添加横坐标、纵坐标、标题和图形标注等。在 MATLAB 中，可以通过一些可选参数来实现这些效果。下面是一些示例代码：</p>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab"><span class="token comment">% 绘制图形</span>
+x <span class="token operator">=</span> <span class="token function">linspace</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+y <span class="token operator">=</span> <span class="token function">sin</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">plot</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span><span class="token string">'--r'</span><span class="token punctuation">,</span><span class="token string">'LineWidth'</span><span class="token punctuation">,</span><span class="token number">1.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+grid on<span class="token punctuation">;</span>
+
+<span class="token comment">% 添加标题和坐标轴标签</span>
+<span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'y=sin(x)'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">xlabel</span><span class="token punctuation">(</span><span class="token string">'x'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">ylabel</span><span class="token punctuation">(</span><span class="token string">'y'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">% 添加文本标注</span>
+<span class="token function">text</span><span class="token punctuation">(</span><span class="token keyword">pi</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">'Maximum'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">% 添加数据光标</span>
+datacursormode on<span class="token punctuation">;</span>
+
+<span class="token comment">% 设置坐标范围</span>
+<span class="token function">xlim</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">ylim</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1.2</span><span class="token punctuation">,</span><span class="token number">1.2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">% 设置刻度</span>
+<span class="token function">xticks</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token operator">:</span><span class="token keyword">pi</span><span class="token operator">/</span><span class="token number">2</span><span class="token operator">:</span><span class="token number">2</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">xticklabels</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">'0'</span><span class="token punctuation">,</span><span class="token string">'\pi/2'</span><span class="token punctuation">,</span><span class="token string">'\pi'</span><span class="token punctuation">,</span><span class="token string">'3\pi/2'</span><span class="token punctuation">,</span><span class="token string">'2\pi'</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">yticks</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">0.5</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">% 设置坐标轴显示格式</span>
+ax <span class="token operator">=</span> gca<span class="token punctuation">;</span>
+ax<span class="token punctuation">.</span>FontSize <span class="token operator">=</span> <span class="token number">14</span><span class="token punctuation">;</span>
+ax<span class="token punctuation">.</span>TickLabelInterpreter <span class="token operator">=</span> <span class="token string">'latex'</span><span class="token punctuation">;</span></code></pre>
+
+<p>上述代码中，<code>plot</code> 函数根据给定的 <code>x</code> 和 <code>y</code> 绘制出了正弦函数的数据曲线，<code>--r</code> 表示绘制虚线，<code>LineWidth</code> 参数表示线条的宽度。通过 <code>grid on</code> 命令打开网格线。</p>
+<p>接下来的代码通过 <code>title</code>、<code>xlabel</code> 和 <code>ylabel</code> 函数添加图形标题和坐标轴标签，<code>text</code> 函数添加数据标注，<code>datacursormode on</code> 命令开启数据光标。<code>xlim</code> 和 <code>ylim</code> 分别用于设置横纵坐标轴的刻度范围，<code>xticks</code> 和 <code>yticks</code> 用于设置坐标轴刻度标记的位置，<code>xticklabels</code> 用于自定义刻度标记的文本。最后，通过 <code>gca</code> 函数获取当前坐标系对象，并设置坐标轴标签大小和解释器类型。</p>
+<p>具体来说，这段代码中的各个语句的含义如下：</p>
+<ol>
+<li><code>x = linspace(0,2*pi,100);</code></li>
+</ol>
+<p>表示采用线性等分方式生成一个向量 <code>x</code>，它位于区间 $[0, 2\pi]$ 内，一共包括 100 个数据点。</p>
+<ol start="2">
+<li><code>y = sin(x);</code></li>
+</ol>
+<p>表示计算正弦函数在向量 <code>x</code> 各个元素对应的值上的取值，得到一个新的向量 <code>y</code>。</p>
+<ol start="3">
+<li><code>plot(x,y,&#39;--r&#39;,&#39;LineWidth&#39;,1.5);</code></li>
+</ol>
+<p>表示调用 <code>plot</code> 函数，将 <code>x</code> 和 <code>y</code> 作为输入数据，绘制出它们的数据曲线。<code>&#39;--r&#39;</code> 参数用于设置线条样式为 “虚线” 和 “红线”， <code>LineWidth</code> 参数用于设置线条宽度为 1.5 像素。</p>
+<ol start="4">
+<li><code>grid on;</code></li>
+</ol>
+<p>表示添加网格线，使得图形更加直观和易读。</p>
+<h2 id="二维绘图函数-stem（棒状图）、stairs（阶梯图）、polar（极坐标）和-pie（饼图）的使用"><a href="#二维绘图函数-stem（棒状图）、stairs（阶梯图）、polar（极坐标）和-pie（饼图）的使用" class="headerlink" title="二维绘图函数 stem（棒状图）、stairs（阶梯图）、polar（极坐标）和 pie（饼图）的使用"></a>二维绘图函数 stem（棒状图）、stairs（阶梯图）、polar（极坐标）和 pie（饼图）的使用</h2><p>在 MATLAB 中，除了常见的 <code>plot</code> 函数，还有一些其他常用的二维绘图函数，本文将介绍其中的 <code>stem</code>、<code>stairs</code>、<code>polar</code> 和 <code>pie</code> 函数的使用方法。</p>
+<ol>
+<li><code>stem</code> 函数（棒状图）</li>
+</ol>
+<p><code>stem</code> 函数是用于绘制棒状图的函数，其语法格式为：</p>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab"><span class="token function">stem</span><span class="token punctuation">(</span>Y<span class="token punctuation">)</span>
+<span class="token function">stem</span><span class="token punctuation">(</span>X<span class="token punctuation">,</span>Y<span class="token punctuation">)</span></code></pre>
+
+<p>其中，<code>Y</code> 是数据向量，函数将绘制每个数据点的垂直线段表示。<code>X</code> 是可选参数，用于指定数据点的横坐标。</p>
+<p>例如，以下代码使用 <code>stem</code> 函数绘制了正弦函数的一个周期内的数据：</p>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab">x <span class="token operator">=</span> <span class="token function">linspace</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+y <span class="token operator">=</span> <span class="token function">sin</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">stem</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<ol start="2">
+<li><code>stairs</code> 函数（阶梯图）</li>
+</ol>
+<p><code>stairs</code> 函数是用于绘制阶梯图的函数，其语法格式为：</p>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab"><span class="token function">stairs</span><span class="token punctuation">(</span>Y<span class="token punctuation">)</span>
+<span class="token function">stairs</span><span class="token punctuation">(</span>X<span class="token punctuation">,</span>Y<span class="token punctuation">)</span></code></pre>
+
+<p>其中，<code>Y</code> 是数据向量，函数将绘制与 <code>Y</code> 同样长度的阶梯状曲线。 <code>X</code> 是可选参数，用于指定数据点的横坐标。</p>
+<p>例如，以下代码使用 <code>stairs</code> 函数绘制了正弦函数的一个周期内的数据：</p>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab">x <span class="token operator">=</span> <span class="token function">linspace</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+y <span class="token operator">=</span> <span class="token function">sin</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">stairs</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+
+<ol start="3">
+<li><code>polar</code> 函数（极坐标图）</li>
+</ol>
+<p><code>polar</code> 函数是用于绘制极坐标图的函数，其语法格式为：</p>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab"><span class="token function">polar</span><span class="token punctuation">(</span>theta<span class="token punctuation">,</span> rho<span class="token punctuation">)</span></code></pre>
+
+<p>其中，<code>theta</code> 表示角度向量，<code>rho</code> 表示极径向量。</p>
+<p>例如，以下代码使用 <code>polar</code> 函数绘制了一个圆形的极坐标图：</p>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab">theta <span class="token operator">=</span> <span class="token function">linspace</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+rho <span class="token operator">=</span> <span class="token function">ones</span><span class="token punctuation">(</span><span class="token function">size</span><span class="token punctuation">(</span>theta<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">polar</span><span class="token punctuation">(</span>theta<span class="token punctuation">,</span> rho<span class="token punctuation">)</span></code></pre>
+
+
+<ol start="4">
+<li><code>pie</code> 函数（饼图）</li>
+</ol>
+<p><code>pie</code> 函数是用于绘制饼图的函数，其语法格式为：</p>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab"><span class="token function">pie</span><span class="token punctuation">(</span>X<span class="token punctuation">)</span></code></pre>
+
+<p>其中，<code>X</code> 是一个向量，表示每一部分的数值。</p>
+<p>例如，以下代码使用 <code>pie</code> 函数绘制了一张简单的饼图：</p>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab">X <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token function">pie</span><span class="token punctuation">(</span>X<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<p>以上就是 <code>stem</code>、<code>stairs</code>、<code>polar</code> 和 <code>pie</code> 函数的简单介绍，更多的细节和参数用法可参考 MATLAB 官方文档。</p>
+<h2 id="同一幅图里面绘制多条曲线常用的四种方法"><a href="#同一幅图里面绘制多条曲线常用的四种方法" class="headerlink" title="同一幅图里面绘制多条曲线常用的四种方法"></a>同一幅图里面绘制多条曲线常用的四种方法</h2><p>在 MATLAB 中，可以使用多种方法绘制多条曲线，并在同一张图上显示。下面介绍常用的四种方法：</p>
+<ol>
+<li>使用 <code>plot</code> 函数多次调用</li>
+</ol>
+<p>这是最基本的方法，即通过多次调用 <code>plot</code> 函数，在同一张图中绘制多条曲线。各条曲线采用不同的颜色或线型区分。以下代码示例展示了如何绘制 $\sin(x)$ 和 $\cos(x)$ 的曲线：</p>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab">x <span class="token operator">=</span> <span class="token function">linspace</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+y1 <span class="token operator">=</span> <span class="token function">sin</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+y2 <span class="token operator">=</span> <span class="token function">cos</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">plot</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y1<span class="token punctuation">,</span> <span class="token string">'r-'</span><span class="token punctuation">,</span> x<span class="token punctuation">,</span> y2<span class="token punctuation">,</span> <span class="token string">'b--'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">legend</span><span class="token punctuation">(</span><span class="token string">'sin'</span><span class="token punctuation">,</span> <span class="token string">'cos'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">xlabel</span><span class="token punctuation">(</span><span class="token string">'x'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">ylabel</span><span class="token punctuation">(</span><span class="token string">'y'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'Sin and Cos'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<p><code>plot</code> 函数通过两次调用分别绘制了 $\sin(x)$ 和 $\cos(x)$ 的曲线，并使用 <code>&#39;r-&#39;</code> 和 <code>&#39;b--&#39;</code> 分别指定了两条曲线的线型和颜色。函数 <code>legend</code> 用于添加图例，标识两条曲线，而 <code>xlabel</code>、<code>ylabel</code> 和 <code>title</code> 函数则用于添加横纵轴标签和标题。</p>
+<ol start="2">
+<li>使用 <code>hold on</code>、<code>hold off</code> 配合单次 <code>plot</code> 函数调用</li>
+</ol>
+<p>该方法采用单次调用 <code>plot</code> 函数的方式，通过设置 <code>&#39;hold on&#39;</code>，使得后续的 <code>plot</code> 函数调用在同一张图中绘制，最后通过 <code>&#39;hold off&#39;</code> 退出绘图模式，恢复默认设置。以下代码示例展示了同样绘制 $\sin(x)$ 和 $\cos(x)$ 曲线的过程：</p>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab">x <span class="token operator">=</span> <span class="token function">linspace</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+y1 <span class="token operator">=</span> <span class="token function">sin</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+y2 <span class="token operator">=</span> <span class="token function">cos</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">plot</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y1<span class="token punctuation">,</span> <span class="token string">'r-'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+hold on<span class="token punctuation">;</span>
+<span class="token function">plot</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y2<span class="token punctuation">,</span> <span class="token string">'b--'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">legend</span><span class="token punctuation">(</span><span class="token string">'sin'</span><span class="token punctuation">,</span> <span class="token string">'cos'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">xlabel</span><span class="token punctuation">(</span><span class="token string">'x'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">ylabel</span><span class="token punctuation">(</span><span class="token string">'y'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'Sin and Cos'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+hold off<span class="token punctuation">;</span></code></pre>
+
+<p><code>plot</code> 函数和其他内容的书写方式与上述方法相似，不同的是需要手动开启和关闭绘图模式。</p>
+<ol start="3">
+<li>使用 <code>ezplot</code> 函数</li>
+</ol>
+<p><code>ezplot</code> 函数可以直接绘制表达式的曲线，从而在同一幅图上画出多条曲线。以下代码示例展示了画出 $\sin(x)$ 和 $\cos(x)$ 的曲线：</p>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab"><span class="token function">ezplot</span><span class="token punctuation">(</span><span class="token string">'sin(x)'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+hold on<span class="token punctuation">;</span>
+<span class="token function">ezplot</span><span class="token punctuation">(</span><span class="token string">'cos(x)'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">legend</span><span class="token punctuation">(</span><span class="token string">'sin'</span><span class="token punctuation">,</span> <span class="token string">'cos'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">xlabel</span><span class="token punctuation">(</span><span class="token string">'x'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">ylabel</span><span class="token punctuation">(</span><span class="token string">'y'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'Sin and Cos'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<p><code>ezplot</code> 函数通过接收一个表达式字符串以及指定的横轴范围绘制曲线，而后续的画图细节同样采用前两种方法的方式表示。</p>
+<ol start="4">
+<li>使用 <code>fplot</code> 函数</li>
+</ol>
+<p><code>fplot</code> 函数与 <code>ezplot</code> 函数类似，也是直接绘制函数曲线，不过它可以绘制函数句柄，从而可以方便地绘制较复杂的函数曲线。以下代码示例展示了画出 $y &#x3D; 2\sin(2x) - \cos^2(x)$ 和 $y &#x3D; x^3 - 6x^2 + 11x - 6$ 的曲线：</p>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab"><span class="token function">fplot</span><span class="token punctuation">(</span><span class="token operator">@</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token number">2</span><span class="token operator">*</span><span class="token function">sin</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span>x<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token function">cos</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token operator">.^</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+hold on<span class="token punctuation">;</span>
+<span class="token function">fplot</span><span class="token punctuation">(</span><span class="token operator">@</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> x<span class="token operator">.^</span><span class="token number">3</span> <span class="token operator">-</span> <span class="token number">6</span><span class="token operator">*</span>x<span class="token operator">.^</span><span class="token number">2</span> <span class="token operator">+</span> <span class="token number">11</span><span class="token operator">*</span>x <span class="token operator">-</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">legend</span><span class="token punctuation">(</span><span class="token string">'2sin(2x) - cos^2(x)'</span><span class="token punctuation">,</span> <span class="token string">'x^3 - 6x^2 + 11x - 6'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">xlabel</span><span class="token punctuation">(</span><span class="token string">'x'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">ylabel</span><span class="token punctuation">(</span><span class="token string">'y'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'Two Curves'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<p><code>fplot</code> 函数通过接收一个匿名函数句柄和指定的横轴范围绘制曲线。</p>
+<p>以上便是绘制多条曲线的四种常见方法</p>
+<h2 id="三维绘图函数-plot3、mesh、surf-和-pie3-的使用方法"><a href="#三维绘图函数-plot3、mesh、surf-和-pie3-的使用方法" class="headerlink" title="三维绘图函数 plot3、mesh、surf 和 pie3 的使用方法"></a>三维绘图函数 plot3、mesh、surf 和 pie3 的使用方法</h2><p>在 MATLAB 中，用于生成三维图形的函数有多种，下面分别介绍 <code>plot3</code>、<code>mesh</code>、<code>surf</code> 和 <code>pie3</code> 的使用方法：</p>
+<ol>
+<li><code>plot3</code> 函数</li>
+</ol>
+<p><code>plot3</code> 函数是用于绘制三维线图的函数，其语法格式为：</p>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab"><span class="token function">plot3</span><span class="token punctuation">(</span>X<span class="token punctuation">,</span>Y<span class="token punctuation">,</span>Z<span class="token punctuation">)</span></code></pre>
+
+<p>其中， <code>X</code> 、<code>Y</code> 和 <code>Z</code> 都是由三维坐标组成的向量。</p>
+<p>例如，以下代码使用 <code>plot3</code> 函数绘制了螺旋线的三维线图：</p>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab">t <span class="token operator">=</span> <span class="token function">linspace</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+x <span class="token operator">=</span> <span class="token function">cos</span><span class="token punctuation">(</span><span class="token keyword">pi</span><span class="token operator">*</span>t<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">.*</span><span class="token function">cos</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+y <span class="token operator">=</span> <span class="token function">cos</span><span class="token punctuation">(</span><span class="token keyword">pi</span><span class="token operator">*</span>t<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">.*</span><span class="token function">sin</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+z <span class="token operator">=</span> <span class="token function">sin</span><span class="token punctuation">(</span><span class="token keyword">pi</span><span class="token operator">*</span>t<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">plot3</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span>z<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">xlabel</span><span class="token punctuation">(</span><span class="token string">'x'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">ylabel</span><span class="token punctuation">(</span><span class="token string">'y'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">zlabel</span><span class="token punctuation">(</span><span class="token string">'z'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'Helix'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+
+<ol start="2">
+<li><code>mesh</code> 函数</li>
+</ol>
+<p><code>mesh</code> 函数是用于绘制三维网格图的函数，其语法格式为：</p>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab"><span class="token function">mesh</span><span class="token punctuation">(</span>Z<span class="token punctuation">)</span>
+<span class="token function">mesh</span><span class="token punctuation">(</span>X<span class="token punctuation">,</span>Y<span class="token punctuation">,</span>Z<span class="token punctuation">)</span></code></pre>
+
+<p>其中，<code>X</code>、<code>Y</code> 表示两个矩阵，<code>Z</code> 是一个与 <code>X</code>、<code>Y</code> 维度相同的矩阵，表示在 <code>(X,Y)</code> 空间中的各点所对应的高度值。</p>
+<p>例如，以下代码使用 <code>mesh</code> 函数绘制了一个三维正弦波：</p>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab"><span class="token punctuation">[</span>X<span class="token punctuation">,</span>Y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">meshgrid</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">2</span><span class="token operator">:</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Z <span class="token operator">=</span> <span class="token function">sin</span><span class="token punctuation">(</span><span class="token function">sqrt</span><span class="token punctuation">(</span>X<span class="token operator">.^</span><span class="token number">2</span> <span class="token operator">+</span> Y<span class="token operator">.^</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">./</span><span class="token function">sqrt</span><span class="token punctuation">(</span>X<span class="token operator">.^</span><span class="token number">2</span> <span class="token operator">+</span> Y<span class="token operator">.^</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">mesh</span><span class="token punctuation">(</span>X<span class="token punctuation">,</span>Y<span class="token punctuation">,</span>Z<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">xlabel</span><span class="token punctuation">(</span><span class="token string">'x'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">ylabel</span><span class="token punctuation">(</span><span class="token string">'y'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">zlabel</span><span class="token punctuation">(</span><span class="token string">'z'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'3D Sine Wave'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+
+<ol start="3">
+<li><code>surf</code> 函数</li>
+</ol>
+<p><code>surf</code> 函数也是用于绘制三维网格图的函数，与 <code>mesh</code> 函数不同的是，<code>surf</code> 函数的绘图效果更加平滑。其语法格式为：</p>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab"><span class="token function">surf</span><span class="token punctuation">(</span>Z<span class="token punctuation">)</span>
+<span class="token function">surf</span><span class="token punctuation">(</span>X<span class="token punctuation">,</span>Y<span class="token punctuation">,</span>Z<span class="token punctuation">)</span></code></pre>
+
+<p>其中， <code>X</code>、<code>Y</code> 和 <code>Z</code> 都是由矩阵组成。</p>
+<p>例如，以下代码使用 <code>surf</code> 函数绘制了一个三维高斯分布曲面：</p>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab"><span class="token punctuation">[</span>X<span class="token punctuation">,</span>Y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">meshgrid</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">2</span><span class="token operator">:</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Z <span class="token operator">=</span> <span class="token function">exp</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token punctuation">(</span>X<span class="token operator">.^</span><span class="token number">2</span><span class="token operator">+</span>Y<span class="token operator">.^</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">./</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">surf</span><span class="token punctuation">(</span>X<span class="token punctuation">,</span>Y<span class="token punctuation">,</span>Z<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">xlabel</span><span class="token punctuation">(</span><span class="token string">'x'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">ylabel</span><span class="token punctuation">(</span><span class="token string">'y'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">zlabel</span><span class="token punctuation">(</span><span class="token string">'z'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'Gaussian Distribution'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+
+<ol start="4">
+<li><code>pie3</code> 函数</li>
+</ol>
+<p><code>pie3</code> 函数是用于绘制三维饼图的函数，其语法格式为：</p>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab"><span class="token function">pie3</span><span class="token punctuation">(</span>Y<span class="token punctuation">,</span>explode<span class="token punctuation">)</span></code></pre>
+
+<p>其中，<code>Y</code> 是数据向量，<code>explode</code> 为可选参数，表示是否将其中的某一部分扇形分离出来。</p>
+<p>例如，以下代码使用 <code>pie3</code> 函数绘制了一个简单的三维饼图：</p>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab">Y <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">20</span> <span class="token number">30</span> <span class="token number">45</span> <span class="token number">10</span> <span class="token number">15</span> <span class="token number">35</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+explode <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span> <span class="token number">0</span> <span class="token number">1</span> <span class="token number">0</span> <span class="token number">0</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token function">pie3</span><span class="token punctuation">(</span>Y<span class="token punctuation">,</span>explode<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">title</span><span class="token punctuation">(</span><span class="token string">'3D Pie Chart'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+
+<p>以上就是 <code>plot3</code> 、<code>mesh</code>、<code>surf</code> 和 <code>pie3</code> 函数的简单介绍，这些绘图函数有广泛的应用场景，更多的细节和参数用法可参考 MATLAB 官方文档。</p>
+<h2 id="MATLAB-的三条动画命令"><a href="#MATLAB-的三条动画命令" class="headerlink" title="MATLAB 的三条动画命令"></a>MATLAB 的三条动画命令</h2><p>在 MATLAB 中，可以使用三条动画命令来实现动态效果，它们分别是 <code>plot</code>、<code>line</code> 和 <code>patch</code>。</p>
+<ol>
+<li><code>plot</code> 命令动画</li>
+</ol>
+<p><code>plot</code> 命令是用于绘制 2D 线图的命令，通过多次调用该命令并在每次调用中改变数据，可以实现动画效果。具体实现过程为不断更新数据，并使用 <code>drawnow</code> 命令强制 MATLAB 在数据更新后立即进行绘图。</p>
+<p>例如，以下代码使用 <code>plot</code> 命令实现了一个简单的动态正弦波：</p>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab">x <span class="token operator">=</span> <span class="token function">linspace</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">,</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> t <span class="token operator">=</span> <span class="token function">linspace</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">)</span>
+    y <span class="token operator">=</span> <span class="token function">sin</span><span class="token punctuation">(</span>x<span class="token operator">+</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">plot</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    drawnow<span class="token punctuation">;</span>
+<span class="token keyword">end</span></code></pre>
+
+<ol start="2">
+<li><code>line</code> 命令动画</li>
+</ol>
+<p><code>line</code> 命令是用于绘制线条的命令，通过不断调用该命令，并在每次调用中改变线条的起始点和终止点坐标，可以实现动画效果。</p>
+<p>例如，以下代码使用 <code>line</code> 命令实现了一个简单的动态圆形：</p>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab">t <span class="token operator">=</span> <span class="token function">linspace</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">,</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token number">i</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token operator">:</span><span class="token function">length</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span>
+    x <span class="token operator">=</span> <span class="token function">cos</span><span class="token punctuation">(</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token number">i</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    y <span class="token operator">=</span> <span class="token function">sin</span><span class="token punctuation">(</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token number">i</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">line</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span>x<span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span>y<span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">'Color'</span><span class="token punctuation">,</span><span class="token string">'k'</span><span class="token punctuation">,</span><span class="token string">'LineWidth'</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    axis equal off<span class="token punctuation">;</span>
+    drawnow<span class="token punctuation">;</span>
+<span class="token keyword">end</span></code></pre>
+
+<ol start="3">
+<li><code>patch</code> 命令动画</li>
+</ol>
+<p><code>patch</code> 命令是用于绘制多边形的命令，通过不断调用该命令，并在每次调用中改变多边形的顶点坐标，可以实现动画效果。</p>
+<p>例如，以下代码使用 <code>patch</code> 命令实现了一个简单的动态正方形：</p>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab">v <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token number">1</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token number">1</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token number">0</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+f <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token function">patch</span><span class="token punctuation">(</span><span class="token string">'Faces'</span><span class="token punctuation">,</span>f<span class="token punctuation">,</span><span class="token string">'Vertices'</span><span class="token punctuation">,</span>v<span class="token punctuation">,</span><span class="token string">'FaceColor'</span><span class="token punctuation">,</span><span class="token string">'r'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+axis equal off<span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token number">i</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token operator">:</span><span class="token number">50</span>
+    v <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token function">v</span><span class="token punctuation">(</span><span class="token operator">:</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token function">v</span><span class="token punctuation">(</span><span class="token keyword">end</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">0.01</span><span class="token punctuation">;</span> <span class="token function">v</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">:</span><span class="token keyword">end</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token function">set</span><span class="token punctuation">(</span><span class="token function">findobj</span><span class="token punctuation">(</span><span class="token string">'Type'</span><span class="token punctuation">,</span><span class="token string">'patch'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">'Vertices'</span><span class="token punctuation">,</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    drawnow<span class="token punctuation">;</span>
+<span class="token keyword">end</span></code></pre>
+
+<p>以上三种动画实现方法都是基于不断地在已有基础上修改数据、更新图像并强制刷新显示，从而实现动态效果。通过合理地设计数据变化的方式，可以使得图形呈现出各种有趣的效果。</p>
+<h2 id="matlab中函数编写和调用"><a href="#matlab中函数编写和调用" class="headerlink" title="matlab中函数编写和调用"></a>matlab中函数编写和调用</h2><p>MATLAB 中的函数文件可以帮助我们封装和重用代码，函数文件的编写和调用非常方便，下面是其详细步骤：</p>
+<ol>
+<li>在 MATLAB 菜单栏中选择「新建」-「函数」，或者在编辑器中使用 <code>function</code> 关键字创建一个新的函数文件，例如：</li>
+</ol>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab"><span class="token keyword">function</span> y <span class="token operator">=</span> <span class="token function">square</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+<span class="token comment">% 求平方</span>
+y <span class="token operator">=</span> x<span class="token operator">^</span><span class="token number">2</span><span class="token punctuation">;</span></code></pre>
+
+<p>其中，<code>function</code> 关键字指定了这是一个函数文件。</p>
+<ol start="2">
+<li>编写函数的具体实现，即在函数体中添加代码，可以包括输入参数（使用括号括起来、用逗号隔开的变量列表）和返回值（使用 <code>return</code> 或指定赋值语句的变量），例如：</li>
+</ol>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab"><span class="token keyword">function</span> y <span class="token operator">=</span> <span class="token function">square</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+<span class="token comment">% 求平方</span>
+y <span class="token operator">=</span> x<span class="token operator">^</span><span class="token number">2</span><span class="token punctuation">;</span></code></pre>
+
+<p>如上代码定义了一个名为 <code>square</code> 的函数，输入一个参数 <code>x</code>，返回其平方。</p>
+<ol start="3">
+<li>将函数文件保存在与其名称相同的 <code>.m</code> 文件中，并将文件保存到 MATLAB 路径的某个位置（可以使用 <code>pwd</code> 函数查看当前路径，也可以将文件保存到当前文件夹下）。</li>
+</ol>
+<p>在编写了函数文件之后，可以像使用内置函数一样在命令行或脚本、其他函数文件中调用该函数。调用函数文件有两种方式：</p>
+<ol>
+<li>直接在命令行中调用，例如：</li>
+</ol>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> y <span class="token operator">=</span> <span class="token function">square</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+y <span class="token operator">=</span>
+     <span class="token number">4</span></code></pre>
+
+<p>如上代码中，我们直接在命令行中调用函数文件 <code>square</code>，并传入参数 <code>2</code>。</p>
+<ol start="2">
+<li>在脚本或其他函数文件中调用，例如：</li>
+</ol>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab"><span class="token comment">% 在 test.m 中调用 square 函数</span>
+x <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+y <span class="token operator">=</span> <span class="token function">square</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">fprintf</span><span class="token punctuation">(</span><span class="token string">'The square of %d is %d.\n'</span><span class="token punctuation">,</span> x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<p>如上代码中，我们在脚本 <code>test.m</code> 中调用函数文件 <code>square</code>，并指定参数 <code>3</code>，输出计算结果。</p>
+<p>注意，在调用函数文件之前，需要保证函数文件已经被保存并位于正确的路径中，可以使用 <code>which</code> 函数查找函数的路径：</p>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab"><span class="token operator">></span><span class="token operator">></span> which square
+<span class="token operator">/</span>path<span class="token operator">/</span>to<span class="token operator">/</span>square<span class="token punctuation">.</span>m</code></pre>
+
+<p>如上代码指定 <code>which</code> 函数返回函数文件 <code>square</code> 的路径。</p>
+<blockquote>
+<p>熟练掌握多项式的表示方法，多项式的四则运算、求导、求根和求值对应函数的使用方法</p>
+</blockquote>
+<p>下面介绍 MATLAB 中矩阵运算的相关函数的使用方法。</p>
+<ul>
+<li>矩阵范数</li>
+</ul>
+<p>MATLAB 中用 <code>norm</code> 函数计算矩阵的范数。它的基本用法为 <code>norm(A,p)</code>，其中 <code>A</code> 是矩阵，<code>p</code> 是范数类型，在 MATLAB 中支持的范数类别有以下几个：</p>
+<ul>
+<li>$p&#x3D;1$，返回矩阵按列取绝对值的和的最大值</li>
+<li>$p&#x3D;2$，返回矩阵的谱范数，即最大特征值的平方根</li>
+<li>$p&#x3D;\infty$，返回矩阵按行取绝对值的和的最大值</li>
+</ul>
+<p>例如，计算矩阵 <code>A</code> 的范数：</p>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab">A <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">2</span><span class="token punctuation">;</span> <span class="token operator">-</span><span class="token number">2</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token function">norm</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment">% 返回 3</span>
+<span class="token function">norm</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment">% 返回 2.6458</span>
+<span class="token function">norm</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span> Inf<span class="token punctuation">)</span> <span class="token comment">% 返回 3</span></code></pre>
+
+<ul>
+<li>矩阵求逆</li>
+</ul>
+<p>MATLAB 中用 <code>inv</code> 函数求解矩阵的逆。使用方法为 <code>B = inv(A)</code>，其中 <code>A</code> 是矩阵，<code>B</code> 是其逆矩阵。在使用时注意，由于计算机浮点数精度限制，矩阵的逆可能不存在或是不唯一的，所以需要注意判别无解或多解的情况。</p>
+<p>例如，计算矩阵 <code>A</code> 的逆矩阵：</p>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab">A <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token number">3</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+B <span class="token operator">=</span> <span class="token function">inv</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<ul>
+<li>矩阵行列式值</li>
+</ul>
+<p>MATLAB 中用 <code>det</code> 函数计算矩阵的行列式值。使用方法为 <code>d = det(A)</code>，其中 <code>A</code> 是矩阵，<code>d</code> 是其行列式值。</p>
+<p>例如，计算矩阵 <code>A</code> 的行列式值：</p>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab">A <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">2</span><span class="token punctuation">;</span> <span class="token operator">-</span><span class="token number">2</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+d <span class="token operator">=</span> <span class="token function">det</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span></code></pre>
+
+<ul>
+<li>线性方程组求解</li>
+</ul>
+<p>MATLAB 中用 <code>linsolve</code> 函数求解线性方程组。使用方法为 <code>x = linsolve(A,b)</code>，其中 <code>A</code> 是系数矩阵，<code>b</code> 是常数向量，<code>x</code> 是未知数向量。</p>
+<p>例如，求解线性方程组 <code>Ax=b</code>：</p>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab">A <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token number">1</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+b <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">;</span> <span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+x <span class="token operator">=</span> <span class="token function">linsolve</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span> b<span class="token punctuation">)</span></code></pre>
+
+<ul>
+<li>矩阵特征值</li>
+</ul>
+<p>MATLAB 中用 <code>eig</code> 函数求解矩阵的特征值和对应的特征向量。使用方法为 <code>[V,D] = eig(A)</code>，其中 <code>A</code> 是矩阵，<code>V</code> 是特征向量矩阵，<code>D</code> 是特征值对角矩阵。</p>
+<p>例如，求解矩阵 <code>A</code> 的特征值和特征向量：</p>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab">A <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token number">1</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">[</span>V<span class="token punctuation">,</span> D<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">eig</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span></code></pre>
+
+<ul>
+<li>矩阵结构形式的提取和变换</li>
+</ul>
+<p>MATLAB 中可以使用 <code>blkdiag</code> 函数将矩阵按照结构形式进行拼接，用 <code>diag</code> 函数提取矩阵的对角线元素。使用方法如下：</p>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab"><span class="token comment">% blkdiag 函数</span>
+A <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">2</span><span class="token punctuation">;</span> <span class="token number">3</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+B <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">5</span> <span class="token number">6</span><span class="token punctuation">;</span> <span class="token number">7</span> <span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+C <span class="token operator">=</span> <span class="token function">blkdiag</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span> B<span class="token punctuation">)</span> <span class="token comment">% 拼接成一个 4x4 的 Block-Diagonal Matrix</span>
+
+<span class="token comment">% diag 函数</span>
+D <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span> <span class="token number">0</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token number">0</span> <span class="token number">3</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token number">0</span> <span class="token number">0</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+v <span class="token operator">=</span> <span class="token function">diag</span><span class="token punctuation">(</span>D<span class="token punctuation">)</span> <span class="token comment">% 提取对角线元素为向量 [2; 3; 1]</span></code></pre>
+
+<p>以上就是 MATLAB 中常用的矩阵运算的相关函数，可以帮助我们高效地进行矩阵计算和线性</p>
+</div></section><ul class="post-copyright"><li class="post-copyright-author"><strong>Post author: </strong>ScumTB</li><li class="post-copyright-link"><strong>Post link: </strong><a href="https://scumtb.cn/2023/05/28/MATLAB%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E5%A4%8D%E4%B9%A0/" title="MATLAB期末考试-使用chatgpt复习">https://scumtb.cn/2023/05/28/MATLAB%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E5%A4%8D%E4%B9%A0/</a></li><li class="post-copyright-license"><strong>Copyright Notice: </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><span class="icon iconify" data-icon="ri:creative-commons-line"></span><span class="icon iconify" data-icon="ri:creative-commons-by-line"></span><span class="icon iconify" data-icon="ri:creative-commons-nc-line"></span><span class="icon iconify" data-icon="ri:creative-commons-sa-line"></span></a> unless otherwise stated.</li></ul></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/2023/05/30/Makefile%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0/" rel="prev" title="Makefile语法学习"><span class="icon iconify" data-icon="ri:arrow-left-s-line"></span><span class="post-nav-text">Makefile语法学习</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/2023/05/09/%E4%BB%8E%E5%AE%9E%E4%BE%8B%E4%B8%AD%E5%AD%A6%E4%B9%A0shell%E8%84%9A%E6%9C%AC/" rel="next" title="dwm中启动脚本"><span class="post-nav-text">dwm中启动脚本</span><span class="icon iconify" data-icon="ri:arrow-right-s-line"></span></a></div></div></div><div class="hty-card" id="comment"></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2019 – 2024 </span><span class="with-love" id="animate"><span class="icon iconify" data-icon="ri:cloud-line"></span></span><span class="author"> ScumTB</span></div><div class="powered"><span>Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> v6.3.0</span><span class="footer-separator">|</span><span>Theme - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.10.11</span></div><div class="live-time"><span>本博客已萌萌哒地运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
+  setTimeout(blog_live_time, 1000);
+  const start = new Date('2021-10-29T00:00:00');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = ` ${passDay} Days ${passHour} Hours ${passMinute} Minutes ${passSecond} Seconds`;
+}
+blog_live_time();
+</script></div></footer></div><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><span class="icon iconify" data-icon="ri:arrow-up-s-line"></span><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a></body></html>
